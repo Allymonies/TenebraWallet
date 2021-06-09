@@ -1,0 +1,115 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+
+.search-result-loading {
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.search-result {
+  &.search-result-exact {
+    display: flex;
+  }
+
+  &.search-result-extended {
+    background: @kw-dark;
+    transition: background 0.3s ease;
+  }
+
+  .search-result-type {
+    display: block;
+
+    color: @text-color-secondary;
+    font-size: @font-size-sm;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .search-result-value {
+    font-weight: bold;
+  }
+
+  .result-left {
+    flex: 1;
+  }
+
+  .result-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    flex: 0;
+
+    text-align: right;
+
+    .tenebra-value {
+      font-size: @font-size-lg;
+    }
+
+    .search-name-owner, .search-block-miner {
+      display: block;
+      color: @text-color-secondary;
+    }
+
+    .date-time {
+      color: @text-color-secondary;
+      font-size: 90%;
+    }
+  }
+
+  .search-result-extended-info {
+    font-size: @font-size-sm;
+
+    white-space: normal;
+
+    .anticon {
+      color: @primary-color;
+      margin-right: @padding-xs;
+    }
+  }
+
+  .conditional-link-disabled {
+    color: inherit;
+  }
+
+  // Hide some result information on very small screens
+  @media (max-width: 300px) {
+    .result-right {
+      display: none;
+    }
+  }
+}
+
+.site-header-search-menu {
+  // Remove the padding from the menu, so it can be re-added to the
+  // .search-result-* items, allowing them to change the background
+  padding: 0;
+
+  .ant-select-item {
+    padding: 0;
+
+    .search-result {
+      padding: @select-dropdown-vertical-padding @control-padding-horizontal;
+    }
+
+    &:hover .search-result-extended, &-option-active:not(&-disabled) .search-result-extended {
+      background: @select-item-active-bg;
+    }
+  }
+
+  // Make the search results dropdown full-width on mobile
+  @media (max-width: @screen-sm) {
+    position: fixed;
+
+    top: @layout-header-height !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+
+    border-radius: 0;
+  }
+}

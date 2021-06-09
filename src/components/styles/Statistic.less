@@ -1,0 +1,29 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+
+.kw-statistic {
+  &-title {
+    color: @kw-text-secondary;
+    display: block;
+  }
+
+  &-value {
+    font-size: @heading-3-size;
+
+    .ant-typography-copy {
+      line-height: 1 !important;
+      margin-left: @padding-xs;
+
+      .anticon {
+        font-size: @font-size-base;
+        vertical-align: 0;
+      }
+    }
+  }
+
+  &-green &-value {
+    color: @kw-green;
+  }
+}

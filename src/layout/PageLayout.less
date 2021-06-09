@@ -1,0 +1,71 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../App.less";
+
+.page-layout {
+  height: 100%;
+
+  .page-layout-header.ant-page-header {
+    min-height: @kw-page-header-height;
+
+    padding-bottom: 0;
+
+    .ant-page-header-heading-sub-title {
+      .ant-typography {
+        color: inherit;
+      }
+    }
+
+    // Hide extra table pagination on mobile
+    @media (max-width: @screen-md) {
+      .ant-pagination {
+        display: none;
+      }
+    }
+  }
+
+  .page-layout-contents {
+    height: calc(100% - @kw-page-header-height);
+
+    padding: @padding-lg;
+
+    // Make tables full-width on mobile (though most should be replaced with
+    // custom views)
+    @media (max-width: @screen-md) {
+      padding: @padding-md;
+
+      >.ant-table-wrapper {
+        .ant-table {
+          margin: 0 -@padding-lg;
+        }
+
+        .ant-pagination {
+          justify-content: center;
+
+          .ant-pagination-total-text {
+            display: none;
+          }
+
+          .ant-pagination-item, .ant-pagination-prev {
+            margin-right: 3px;
+          }
+
+          .ant-pagination-next {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    @media (max-width: @screen-sm) {
+      padding: @padding-sm;
+    }
+  }
+
+  &.page-layout-no-top-padding {
+    .page-layout-contents {
+      padding-top: 0;
+    }
+  }
+}

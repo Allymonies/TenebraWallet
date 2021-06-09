@@ -1,0 +1,70 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+@import "../../style/table.less";
+
+.names-page {
+  // Highlight unpaid names
+  .ant-table .name-row-unpaid {
+    background: fade(@kw-primary, 15%);
+
+    td.ant-table-cell {
+      border-bottom-color: fade(@kw-primary, 20%);
+    }
+
+    .ant-table-cell.ant-table-column-sort {
+      background: fade(@kw-primary, 20%);
+    }
+
+    &:hover td.ant-table-cell {
+      background: fade(@kw-primary, 20%);
+
+      &.ant-table-cell.ant-table-column-sort {
+        background: fade(@kw-primary, 35%);
+      }
+    }
+  }
+
+  .table-mobile-list-view {
+    .name-mobile-item {
+      .name-name {
+        display: block;
+        font-size: 120%;
+      }
+
+      .name-tags {
+        float: right;
+
+        .ant-tag {
+          white-space: nowrap;
+        }
+      }
+
+      .name-field {
+        font-weight: bold;
+        white-space: nowrap;
+        color: @text-color-secondary;
+      }
+
+      .name-registered, .name-updated {
+        margin-top: @padding-xss;
+        color: @text-color-secondary;
+        font-size: @font-size-sm;
+      }
+    }
+  }
+
+  @media (max-width: @screen-sm) {
+    // Make the "Purchase name" button full width on mobile
+    .ant-page-header-heading-extra {
+      width: 100%;
+
+      .ant-btn {
+        display: block;
+        width: 100%;
+        margin-top: @margin-sm;
+      }
+    }
+  }
+}

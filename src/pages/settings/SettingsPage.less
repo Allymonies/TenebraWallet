@@ -1,0 +1,69 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+
+.settings-page {
+  .big-menu.ant-menu.ant-menu-inline {
+    .ant-menu-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .menu-item-setting {
+        margin: -@padding-xs 0;
+        padding: @padding-xs 0;
+      }
+    }
+  }
+
+  .settings-language-item {
+    // ant-design adds `width: calc(100% + 1px)` to menu items for some reason
+    width: 100%;
+
+    &.ant-menu-item {
+      flex-direction: row !important;
+      justify-content: flex-start !important;
+    }
+
+    &.settings-language-item-current {
+      background: lighten(@kw-darker, 5%);
+      color: @primary-color;
+    }
+
+    .settings-language-flag {
+      display: inline-block;
+
+      width: 30px;
+      height: 20px;
+
+      vertical-align: -0.25em;
+
+      margin-right: @margin-sm;
+    }
+
+    .settings-language-native-name {
+      color: @text-color-secondary;
+      margin-left: @padding-xs;
+    }
+  }
+
+  .settings-translations-extra {
+    // Force the fake label button to vertically align correctly
+    display: flex;
+
+    .ant-btn {
+      margin-right: @margin-sm;
+      &:last-child { margin-right: 0; }
+    }
+  }
+
+  .menu-item-setting-integer {
+    .ant-input-group.ant-input-group-compact {
+      display: inline-block;
+      width: auto;
+      margin-right: @margin-sm;
+      margin-bottom: @padding-xs;
+    }
+  }
+}

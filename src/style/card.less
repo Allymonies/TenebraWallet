@@ -1,0 +1,152 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../App.less";
+
+.kw-card {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  border: none;
+  border-radius: @kw-big-card-border-radius;
+
+  .ant-card-head {
+    border-bottom: 0;
+    margin-bottom: 0;
+
+    border-radius: @kw-big-card-border-radius @kw-big-card-border-radius 0 0;
+
+    .ant-card-head-title {
+      padding-bottom: 0;
+    }
+  }
+
+  .ant-card-body {
+    padding-top: @padding-sm;
+  }
+
+  &.empty .ant-card-body {
+    height: 100%;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before, &::after {
+      content: none;
+    }
+
+    .ant-empty-normal {
+      padding: @padding-sm;
+      margin: 0;
+    }
+
+    .ant-result {
+      padding: @padding-sm;
+
+      .ant-result-icon {
+        margin-bottom: @margin-xs;
+
+        .anticon { font-size: 48px; }
+      }
+    }
+
+    @media (max-width: @screen-lg) {
+      padding: @margin-md 0;
+    }
+  }
+
+  .card-list-item {
+    padding: (@padding-sm / 2) @padding-md;
+    margin-bottom: @margin-xs;
+
+    background: @kw-dark;
+    border-radius: @kw-big-card-border-radius;
+
+    box-sizing: border-box;
+    min-height: 60px;
+    justify-content: center;
+
+    line-height: 1.5;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .card-more a {
+    display: block;
+    width: 100%;
+
+    margin-bottom: -@padding-sm;
+
+    color: @text-color-secondary;
+    font-size: 90%;
+    text-align: center;
+
+    &:hover {
+      color: lighten(@text-color-secondary, 10%);
+    }
+  }
+
+  // Deal with tabbed cards
+  &.ant-card-contain-tabs {
+    .ant-card-head {
+      // These padding hacks allow the border to stretch to the outer edges
+      // of the card, while keeping everything padded nicely
+      padding: 0;
+
+      .ant-card-head-wrapper {
+        padding: 0 @card-padding-base;
+      }
+
+      .ant-tabs {
+        .ant-tabs-nav-wrap {
+          padding: 0 @card-padding-base;
+        }
+
+        // The tabs were also just way too large
+        .ant-tabs-tab {
+          padding: @padding-sm 0;
+          margin-right: @margin-md;
+          font-size: @font-size-base;
+
+          color: @text-color-secondary;
+
+          &:hover {
+            color: lighten(@text-color-secondary, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: @screen-sm) {
+    .ant-card-head {
+      padding: 0 @padding-md;
+
+      .ant-card-head-title {
+        padding-top: @padding-md;
+      }
+    }
+
+    .ant-card-body {
+      padding: @padding-md;
+    }
+
+    .card-more {
+      height: 32px;
+      margin-bottom: -6px;
+
+      a {
+        display: inline;
+        line-height: 32px;
+        vertical-align: middle;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

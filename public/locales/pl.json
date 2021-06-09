@@ -1,0 +1,1271 @@
+{
+  "app": {
+    "name": "TenebraWeb"
+  },
+
+  "nav": {
+    "connection": {
+      "online": "Połączony",
+      "offline": "Rozłączony",
+      "connecting": "Nawiązywanie połączenia"
+    },
+
+    "search": {
+      "placeholder": "Przeszukaj sieć Tenebra",
+      "placeholderShortcut": "Przeszukaj sieć Tenebra ({{shortcut}})",
+      "placeholderShort": "Przeszukaj...",
+      "rateLimitHit": "Proszę zwolnij.",
+      "noResults": "Brak wyników.",
+
+      "resultAddress": "Adres",
+      "resultName": "Nazwa",
+      "resultNameOwner": "Posiadany przez <1 />",
+      "resultBlockID": "ID bloku",
+      "resultBlockIDMinedBy": "Wydobyty przez <1 />",
+      "resultTransactionID": "ID transakcji",
+      "resultTransactions": "Transakcje",
+      "resultTransactionsAddress": "Wyszukaj transakcje z udziałem <1 />",
+      "resultTransactionsAddressResult_0": "<0>{{count, number}}</0> transakcja z udziałem <2 />",
+      "resultTransactionsAddressResult_1": "<0>{{count, number}}</0> transakcje z udziałem <2 />",
+      "resultTransactionsAddressResult_2": "<0>{{count, number}}</0> transakcji z udziałem <2 />",
+      "resultTransactionsAddressResultEmpty": "Brak transakcji z udziałem <1 />",
+      "resultTransactionsName": "Wyszukaj transakcje z udziałem <1 />",
+      "resultTransactionsNameResult_0": "<0>{{count, number}}</0> transakcja wysłana do <2 />",
+      "resultTransactionsNameResult_1": "<0>{{count, number}}</0> transakcje wysłano do <2 />",
+      "resultTransactionsNameResult_2": "<0>{{count, number}}</0> transakcji wysłanych do <2 />",
+      "resultTransactionsNameResultEmpty": "Brak transakcji wysłanych do <1 />",
+      "resultTransactionsMetadata": "Wyszukiwanie metadanych zawierających <1 />",
+      "resultTransactionsMetadataResult_0": "<0>{{count, number}}</0> transakcja zawierająca metadane <2 />",
+      "resultTransactionsMetadataResult_1": "<0>{{count, number}}</0> transakcje zawierające metadane <2 />",
+      "resultTransactionsMetadataResult_2": "<0>{{count, number}}</0> transakcji zawierających metadane <2 />",
+      "resultTransactionsMetadataResultEmpty": "Brak transakcji zawierających metadane <1 />"
+    },
+
+    "send": "Wyślij",
+    "sendLong": "Wyślij Tenebra",
+    "request": "Zażądaj",
+    "requestLong": "Zażądaj Tenebra",
+    "sort": "Sortuj wyniki",
+
+    "settings": "Ustawienia",
+    "more": "Więcej"
+  },
+
+  "sidebar": {
+    "totalBalance": "Saldo całkowite",
+    "dashboard": "Pulpit nawigacyjny",
+    "myWallets": "Moje portfele",
+    "addressBook": "Książka adresowa",
+    "transactions": "Transakcje",
+    "names": "Nazwy",
+    "mining": "Wydobywanie",
+    "network": "Sieć",
+    "blocks": "Bloki",
+    "statistics": "Statystyka",
+    "madeBy": "Stworzone przez <1>{{authorName}}</1>",
+    "hostedBy": "Hostowany przez <1>{{host}}</1>",
+    "github": "GitHub",
+    "credits": "Uznania",
+    "whatsNew": "Nowości",
+
+    "updateTitle": "Dostępna aktualizacja!",
+    "updateDescription": "Dostępna jest nowa wersja TenebraWeb. Proszę odświeżyć stronę.",
+    "updateReload": "Odśwież"
+  },
+
+  "dialog": {
+    "close": "Zamknij",
+    "yes": "Tak",
+    "no": "Nie",
+    "ok": "OK",
+    "cancel": "Anuluj"
+  },
+
+  "pagination": {
+    "justPage": "Strona {{page}}",
+    "pageWithTotal": "Strona {{page}} z {{total}}"
+  },
+
+  "error": "Błąd",
+  "errorBoundary": {
+    "title": "Błąd krytyczny",
+    "description": "Wystąpił błąd krytyczny w TenebraWeb, więc ta strona została zamknięta. Szczegółowe informacje można znaleźć w konsoli.",
+    "sentryNote": "Ten błąd został zgłoszony automatycznie."
+  },
+  "errorReported": "Błąd został zgłoszony automatycznie. Szczegółowe informacje można znaleźć w konsoli.",
+
+  "loading": "Ładowanie...",
+
+  "copy": "Skopiuj do schowka",
+  "copied": "Skopiowano!",
+
+  "pageNotFound": {
+    "resultTitle": "Strona nie znaleziona",
+    "nyiTitle": "Jeszcze nie zaimplementowane",
+    "nyiSubTitle": "Ta funkcja będzie dostępna wkrótce!",
+    "buttonGoBack": "Wstecz"
+  },
+
+  "contextualAddressUnknown": "Nieznany",
+  "contextualAddressNonExistentTooltip": "Ten adres nie został jeszcze zainicjowany w sieci Tenebra.",
+
+  "typeahead": {
+    "emptyLabel": "Nie znaleziono dopasowań.",
+    "paginationText": "Wyświetl dodatkowe wyniki ..."
+  },
+
+  "masterPassword": {
+    "dialogTitle": "Hasło główne",
+    "passwordPlaceholder": "Hasło główne",
+    "passwordConfirmPlaceholder": "Potwierdź hasło główne",
+    "createPassword": "Stwórz hasło",
+    "logIn": "Zaloguj sie",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "intro2": "Wprowadź <1>hasło główne</1>, aby zaszyfrować klucze prywatne portfela. Zostaną one zapisane w lokalnej pamięci przeglądarki i zostaniesz poproszony o podanie hasła głównego, aby je odszyfrować raz na sesję.",
+    "learnMore": "dowiedz się więcej",
+    "errorPasswordRequired": "Wymagane jest hasło.",
+    "errorPasswordLength": "Musi mieć co najmniej 1 znak.",
+    "errorPasswordUnset": "Hasło główne nie zostało skonfigurowane.",
+    "errorPasswordIncorrect": "Niepoprawne hasło.",
+    "errorPasswordInequal": "Hasła muszą się zgadzać.",
+    "errorStorageCorrupt": "Pamięć portfela jest uszkodzona.",
+    "errorNoPassword": "Wymagane jest hasło główne.",
+    "errorUnknown": "Nieznany błąd.",
+    "helpWalletStorageTitle": "Pomoc: Pamięć portfela",
+    "popoverTitle": "Odszyfruj portfele",
+    "popoverTitleEncrypt": "Zaszyfruj portfele",
+    "popoverAuthoriseButton": "Autoryzuj",
+    "popoverDescription": "Wprowadź swoje hasło główne, aby odszyfrować swoje portfele.",
+    "popoverDescriptionEncrypt": "Wprowadź swoje hasło główne, aby zaszyfrować i odszyfrować swoje portfele.",
+    "forcedAuthWarning": "Zostałeś automatycznie zalogowany przez niebezpieczne ustawienie debugowania.",
+    "earlyAuthError": "Aplikacja nie została jeszcze w pełni załadowana, spróbuj ponownie.",
+
+    "reset": {
+      "modalTitle": "Zresetuj hasło główne",
+      "description": "Czy na pewno chcesz zresetować swoje hasło główne? <strong>Wszystkie Twoje portfele zostaną usunięte.</strong> Pamiętaj, aby najpierw <3>wyeksportować kopię zapasową</3>!!!",
+      "buttonConfirm": "Zresetuj i usuń",
+
+      "modalTitle2": "USUŃ WSZYSTKIE PORTFELE",
+      "description2": "Czy na PEWNO chcesz <strong>USUNĄĆ WSZYSTKIE SWOJE PORTFELE</strong>?",
+      "buttonConfirm2": "Tak, na pewno [{{n}}]",
+      "buttonConfirmFinal": "Tak, na pewno!"
+    },
+
+    "change": {
+      "modalTitle": "Zmień hasło główne"
+    }
+  },
+
+  "myWallets": {
+    "title": "Portfele",
+    "manageBackups": "Zarządzaj kopiami zapasowymi",
+    "importBackup": "Importuj portfele",
+    "exportBackup": "Eksport portfeli",
+    "createWallet": "Utwórz portfel",
+    "addExistingWallet": "Dodaj istniejący portfel",
+    "searchPlaceholder": "Przeszukaj portfele ...",
+    "categoryDropdownAll": "Wszystkie kategorie",
+    "columnLabel": "Etykieta",
+    "columnAddress": "Adres",
+    "columnBalance": "Saldo",
+    "columnNames": "Nazwy",
+    "columnCategory": "Kategoria",
+    "columnFirstSeen": "Pierwszy raz widziany",
+    "nameCount_0": "{{count, number}} nazwa",
+    "nameCount_1": "{{count, number}} nazwy",
+    "nameCount_2": "{{count, number}} nazw",
+    "nameCountEmpty": "Brak nazw",
+    "firstSeen": "Pierwszy raz widziany {{date}}",
+    "firstSeenMobile": "Pierwszy raz widziany: <1 />",
+
+    "walletCount_0": "{{count, number}} portfel",
+    "walletCount_1": "{{count, number}} portfele",
+    "walletCount_2": "{{count, number}} portfeli",
+    "walletCountEmpty": "Brak portfeli",
+
+    "noWalletsHint": "Nie ma jeszcze portfeli",
+    "noWalletsText": "Dodaj lub utwórz portfel, klikając menu <1 /> w prawym górnym rogu!",
+
+    "actionsViewAddress": "Wyświetl adres",
+    "actionsEditTooltip": "Edytuj portfel",
+    "actionsSendTransaction": "Wyślij Tenebra",
+    "actionsWalletInfo": "Informacje o portfelu",
+    "actionsDelete": "Usuń portfel",
+    "actionsDeleteConfirm": "Czy na pewno chcesz usunąć ten portfel?",
+    "actionsDeleteConfirmDescription": "Jeśli nie wykonałeś kopii zapasowej lub nie zapisałeś hasła, zostanie ono utracone na zawsze!",
+
+    "tagDontSave": "Tymczasowy",
+    "tagDontSaveTooltip": "Tymczasowy portfel",
+
+    "info": {
+      "title": "Informacje o portfelu - {{address}}",
+
+      "titleBasicInfo": "Podstawowe informacje",
+      "id": "ID",
+      "label": "Etykieta",
+      "category": "Kategoria",
+      "username": "Nazwa Użytkownika",
+      "password": "Hasło",
+      "privatekey": "Prywatny klucz",
+      "format": "Format",
+
+      "titleSyncedInfo": "Informacje zsynchronizowane",
+      "address": "Adres",
+      "balance": "Saldo",
+      "names": "Liczba nazw",
+      "firstSeen": "Pierwszy raz widziany",
+      "existsOnNetwork": "Istnieje w sieci",
+      "lastSynced": "Ostatnia synchronizacja",
+
+      "titleAdvancedInfo": "Informacje zaawansowane",
+      "encPassword": "Zaszyfrowane hasło",
+      "encPrivatekey": "Zaszyfrowany klucz prywatny",
+      "saved": "zapisane",
+
+      "revealLink": "Pokaż",
+      "hideLink": "Schowaj",
+
+      "true": "Tak",
+      "false": "Nie"
+    }
+  },
+
+  "addressBook": {
+    "title": "Książka adresowa",
+
+    "contactCount_0": "{{count, number}} kontakt",
+    "contactCount_1": "{{count, number}} kontakty",
+    "contactCount_2": "{{count, number}} kontaktów",
+    "contactCountEmpty": "Brak kontaktów",
+
+    "buttonAddContact": "Dodaj kontakt",
+
+    "columnLabel": "Etykieta",
+    "columnAddress": "Adres",
+
+    "actionsViewAddress": "Wyświetl adres",
+    "actionsViewName": "Wyświetl nazwę",
+    "actionsEditTooltip": "Edytuj kontakt",
+    "actionsSendTransaction": "Wyślij Tenebra",
+    "actionsDelete": "Usuń kontakt",
+    "actionsDeleteConfirm": "Czy na pewno chcesz usunąć ten kontakt?"
+  },
+
+  "myTransactions": {
+    "title": "Transakcje",
+    "searchPlaceholder": "Wyszukaj transakcje...",
+    "columnFrom": "Od",
+    "columnTo": "Do",
+    "columnValue": "Wartość",
+    "columnTime": "Czas"
+  },
+
+  "addWallet": {
+    "dialogTitle": "Dodaj portfel",
+    "dialogTitleCreate": "Utwórz portfel",
+    "dialogTitleEdit": "Edytuj portfel",
+    "dialogOkAdd": "Dodaj",
+    "dialogOkCreate": "Utwórz",
+    "dialogOkEdit": "Zapisz",
+    "dialogAddExisting": "Dodaj istniejący portfel",
+
+    "walletLabel": "Etykieta portfela",
+    "walletLabelPlaceholder": "Etykieta portfela (opcjonalna)",
+    "walletLabelMaxLengthError": "Nie więcej niż 32 znaki",
+    "walletLabelWhitespaceError": "Nie mogą to być tylko spacje",
+
+    "walletCategory": "Kategoria portfela",
+    "walletCategoryDropdownNone": "Brak kategorii",
+    "walletCategoryDropdownNew": "Nowa",
+    "walletCategoryDropdownNewPlaceholder": "Nazwa kategorii",
+
+    "walletAddress": "Adres portfela",
+    "walletUsername": "Nazwa użytkownika portfela",
+    "walletUsernamePlaceholder": "Nazwa użytkownika portfela",
+    "walletPassword": "Hasło do portfela",
+    "walletPasswordPlaceholder": "Hasło do portfela",
+    "walletPasswordWarning": "Upewnij się, że zapisałeś to w <1>bezpiecznym</1> miejscu!",
+    "walletPasswordRegenerate": "Wygeneruj nowy",
+    "walletPrivatekey": "Klucz prywatny portfela",
+    "walletPrivatekeyPlaceholder": "Klucz prywatny portfela",
+
+    "advancedOptions": "Zaawansowane opcje",
+
+    "walletFormat": "Format portfela",
+    "walletFormatTenebraWallet": "TenebraWallet, KWallet (zalecany)",
+    "walletFormatTenebraWalletUsernameAppendhashes": "KW-Username (appendhashes)",
+    "walletFormatTenebraWalletUsername": "KW-Username (pre-appendhashes)",
+    "walletFormatJwalelset": "jwalelset",
+    "walletFormatApi": "Raw/API (advanced users)",
+
+    "walletSave": "Zapisz ten portfel w TenebraWeb",
+
+    "messageSuccessAdd": "Pomyślnie dodano portfel!",
+    "messageSuccessCreate": "Pomyślnie utworzono portfel!",
+    "messageSuccessEdit": "Pomyślnie zapisano portfel!",
+
+    "errorPasswordRequired": "Wymagane jest hasło.",
+    "errorPrivatekeyRequired": "Wymagany jest klucz prywatny.",
+    "errorUnexpectedTitle": "Niespodziewany błąd",
+    "errorUnexpectedDescription": "Wystąpił błąd podczas dodawania portfela. Szczegółowe informacje można znaleźć w konsoli.",
+    "errorUnexpectedEditDescription": "Wystąpił błąd podczas edycji portfela. Szczegółowe informacje można znaleźć w konsoli.",
+    "errorDuplicateWalletTitle": "Portfel już istnieje",
+    "errorDuplicateWalletDescription": "Masz już portfel dla tego adresu.",
+    "errorMissingWalletTitle": "Nie znaleziono portfela",
+    "errorMissingWalletDescription": "Portfel, który próbujesz edytować, już nie istnieje.",
+    "errorDecryptTitle": "Nieprawidłowe hasło główne",
+    "errorDecryptDescription": "Nie udało się odszyfrować hasła do portfela. Czy hasło główne jest prawidłowe?",
+    "errorWalletLimitTitle": "Osiągnięto limit portfeli",
+    "errorWalletLimitDescription": "Obecnie nie możesz dodać więcej portfeli."
+  },
+
+  "addContact": {
+    "modalTitle": "Dodaj kontakt",
+    "modalTitleEdit": "Edytuj kontakt",
+
+    "buttonSubmit": "Dodaj",
+    "buttonSubmitEdit": "Zapisz",
+
+    "contactLabel": "Etykieta",
+    "contactLabelPlaceholder": "Etykieta kontaktowu (opcjonalna)",
+    "contactLabelMaxLengthError": "Nie więcej niż 32 znaki",
+    "contactLabelWhitespaceError": "Nie mogą to być tylko spacje",
+
+    "contactAddressLabel": "Adres lub nazwa",
+
+    "messageSuccessAdd": "Pomyślnie dodano kontakt!",
+    "messageSuccessEdit": "Kontakt zapisany pomyślnie!",
+
+    "errorDuplicateContactTitle": "Kontakt już istnieje",
+    "errorDuplicateContactDescription": "Masz już kontakt dla tego adresu.",
+    "errorMissingContactTitle": "Nie znaleziono kontaktu",
+    "errorMissingContactDescription": "Kontakt, który próbujesz edytować, już nie istnieje.",
+    "errorContactLimitTitle": "Osiągnięto limit kontaktów",
+    "errorContactLimitDescription": "Obecnie nie możesz dodać więcej kontaktów."
+  },
+
+  "dashboard": {
+    "siteTitle": "Pulpit nawigacyjny",
+
+    "inDevBanner": "Witamy w prywatnej wersji beta TenebraWeb v2! Ta strona jest wciąż w fazie rozwoju, więc obecnie brakuje większości funkcji. Prosimy o zgłaszanie wszystkich błędów na <1> GitHub </1>. Dzięki!",
+
+    "walletOverviewCardTitle": "Portfele",
+    "walletOverviewTotalBalance": "Saldo całkowite",
+    "walletOverviewNames": "Nazwy",
+    "walletOverviewNamesCount_0": "{{count, number}} nazwa",
+    "walletOverviewNamesCount_1": "{{count, number}} nazwy",
+    "walletOverviewNamesCount_2": "{{count, number}} nazw",
+    "walletOverviewNamesCountEmpty": "Brak nazw",
+    "walletOverviewSeeMore": "Zobacz wszystkie {{count, number}}...",
+    "walletOverviewAddWallets": "Dodaj portfele...",
+
+    "transactionsCardTitle": "Transakcje",
+    "transactionsError": "Wystąpił błąd podczas pobierania transakcji. Zobacz konsolę, aby uzyskać szczegółowe informacje.",
+
+    "blockValueCardTitle": "Wartość bloku",
+    "blockValueBaseValue": "Wartość bloku (<1></1>)",
+    "blockValueBaseValueNames_0": "{{count, number}} nazwa",
+    "blockValueBaseValueNames_1": "{{count, number}} nazwy",
+    "blockValueBaseValueNames_2": "{{count, number}} nazw",
+    "blockValueNextDecrease_0": "Zmniejsza o <1></1> w <3>{{count, number}} blok</3>",
+    "blockValueNextDecrease_1": "Zmniejsza o <1></1> w <3>{{count, number}} bloki</3>",
+    "blockValueNextDecrease_2": "Zmniejsza o <1></1> w <3>{{count, number}} bloków</3>",
+    "blockValueReset_0": "Resetuje się za <1>{{count, number}} blok</1>",
+    "blockValueReset_1": "Resetuje się za <1>{{count, number}} bloki</1>",
+    "blockValueReset_2": "Resetuje się za <1>{{count, number}} bloków</1>",
+    "blockValueEmptyDescription": "Wartość bloku wzrasta, gdy kupowane są <1>nazwy</1>.",
+
+    "blockDifficultyCardTitle": "Trudność bloku",
+    "blockDifficultyError": "Wystąpił błąd podczas pobierania trudności bloku. Zobacz konsolę, aby uzyskać szczegółowe informacje.",
+    "blockDifficultyHashRate": "Około <1 />",
+    "blockDifficultyHashRateTooltip": "Szacowana łączna szybkość wydobycia w sieci, na podstawie bieżącej pracy.",
+    "blockDifficultyChartWork": "Trudność bloku",
+    "blockDifficultyChartLinear": "Liniowy",
+    "blockDifficultyChartLog": "Logarytmiczny",
+
+    "motdCardTitle": "MOTD serwera",
+    "motdDebugMode": "Ten serwer jest nieoficjalnym serwerem developerskim. Można manipulować saldami i transakcjami. Postępuj ostrożnie.",
+
+    "whatsNewCardTitle": "Nowości",
+    "whatsNewButton": "Nowości",
+
+    "tipsCardTitle": "Porada dnia",
+    "tipsPrevious": "Poprzedni",
+    "tipsNext": "Następny",
+    "tips": {
+      "0": "Sprawdź, co nowego w Tenebra i TenebraWeb na stronie [Co nowego](/whatsnew)!",
+      "1": "Możesz szybko poruszać się po tabelach za pomocą klawiszy strzałek na pulpicie.",
+      "2": "Możesz kliknąć nagłówki tabeli, aby je posortować.",
+      "3": "Możesz filtrować według kategorii na stronie [Moje portfele](/wallets), klikając ikonę filtru w nagłówku tabeli.",
+      "4": "Na [stronie ustawień](/settings) dostępnych jest wiele zaawansowanych opcji umożliwiających personalizację korzystania z TenebraWeb.",
+      "5": "Wygeneruj wstępnie wypełnione linki do transakcji za pomocą nowej strony [Żądania](/request).",
+      "6": "Pamiętaj, aby wykonać kopię zapasową [swoich portfeli](/wallets)!",
+      "7": "Szybko przeszukaj sieć Tenebra za pomocą skrótu klawiaturowego Ctrl + K (Cmd + K w systemie macOS).",
+      "8": "Dodawaj kontakty w [książce adresowej](/contacts), aby szybko wysyłać im transakcje.",
+      "9": "Transakcja „podbita” to transakcja wysyłana z adresu do tego samego adresu.",
+      "10": "Wykres „trudności bloku” może być przedstawiony w skali logarytmicznej, aby łatwiej dostrzec małe zmiany przy niższych trudnościach.",
+      "1-status": "Masz połączenie z nieoficjalnym serwerem. Twoje hasła do portfela mogą zostać wysłane do operatora, który może ich użyć, aby uzyskać dostęp do Twoich portfeli na oficjalnym serwerze. Aby uzyskać więcej informacji, zadaj pytanie <1>tutaj</1>.",
+      "11": "Format daty można zmienić w [ustawieniach zaawansowanych](/settings).",
+      "12": "Możesz zobaczyć [najniższe hashe wydobytych bloków](/network/blocks/lowest).",
+      "13": "Ostatnio zakupione nazwy można zobaczyć na stronie [Nowych Nazw](/network/names/new).",
+      "14": "Wartość bloku wzrasta, gdy kupowane są [nazwy](/network/names)",
+      "15": "Jeśli martwisz się przypadkowymi transakcjami, możesz włączyć monit potwierdzenia w [ustawieniach zaawansowanych](/settings)."
+    }
+  },
+
+  "credits": {
+    "title": "Uznania",
+    "madeBy": "Stworzone przez <1>{{authorName}}</1>",
+    "hostedBy": "Hostowany przez <1>{{host}}</1>",
+    "supportersTitle": "Darczyńcy",
+    "supportersDescription": "Ten projekt był możliwy dzięki następującym niesamowitym darczyńcom:",
+    "supportButton": "Wesprzyj TenebraWeb",
+    "translatorsTitle": "Tłumacze",
+    "translatorsDescription": "Ten projekt został przetłumaczony przez następujących niesamowitych współpracowników:",
+    "translateButton": "Przetłumacz TenebraWeb",
+    "tmpim": "Stworzony przez tmpim",
+
+    "versionInfo": {
+      "version": "Wersja",
+      "commitHash": "Commit",
+      "buildTime": "Czas budowy",
+      "variant": "Wariant",
+      "license": "Licencja"
+    },
+
+    "privacyTitle": "Prywatność",
+    "privacy": {
+      "tenebraServer": "Server Tenebra",
+      "tenebraServerDesc": "Jedyne informacje umożliwiające identyfikację, które przechowuje <1>Tenebra Server</1>, to Twój adres IP, User-Agent i Origin w dziennikach serwera internetowego. Te informacje są automatycznie usuwane po 30 dniach.",
+      "tenebraweb": "TenebraWeb",
+      "tenebrawebDesc1": "TenebraWeb używa samoobsługowego serwera <1>Sentry</1> do automatycznego raportowania błędów. Ten system przechowuje Twój adres IP, User-Agent, Origin, okruszki chleba i szczegóły wszelkich błędów, które są automatycznie zgłaszane. Te informacje są automatycznie usuwane po 30 dniach.",
+      "tenebrawebDesc2": "Jeśli masz rozszerzenie blokujące reklamy lub śledzące, takie jak <1>uBlock Origin</1> <strong>(zalecane)</strong>, nasz system Sentry jest już blokowany przez wbudowane listy, więc nie musisz martwić się o swoją prywatność. Możesz również zrezygnować z raportowania błędów na <4>stronie ustawień</4>. To powiedziawszy, jeśli chcesz nam pomóc, dostarczając bardziej szczegółowe raporty o błędach, rozważ zrobienie wyjątku dla TenebraWeb w swoim oprogramowaniu do blokowania elementów śledzących. Ta witryna nie wyświetla reklam.",
+      "tenebrawebDesc3": "Jeśli masz jakieś pytania lub wątpliwości, skontaktuj się z programistami."
+    }
+  },
+
+  "settings": {
+    "siteTitle": "Ustawienia",
+    "title": "Ustawienia",
+
+    "messageSuccess": "Ustawienie zostało pomyślnie zmienione!",
+
+    "settingIntegerSave": "Zapisz",
+
+    "menuLanguage": "Język",
+
+    "subMenuBackups": "Zarządzaj kopiami zapasowymi",
+    "importBackup": "Importuj portfele",
+    "exportBackup": "Eksport portfeli",
+
+    "subMenuMasterPassword": "Hasło główne",
+    "changeMasterPassword": "Zmień hasło główne",
+    "resetMasterPassword": "Zresetuj hasło główne",
+
+    "subMenuAutoRefresh": "Automatyczne odświeżanie",
+    "autoRefreshTables": "Automatyczne odświeżanie tabel",
+    "autoRefreshTablesDescription": "Określa, czy listy w dużych tabelach (np. Transakcje, nazwy) powinny być automatycznie odświeżane po wykryciu zmiany w sieci.",
+    "autoRefreshAddressPage": "Automatyczne odświeżanie strony z adresami",
+    "autoRefreshNamePage": "Automatyczne odświeżanie strony z nazwami",
+
+    "subMenuAdvanced": "Zaawansowane ustawienia",
+    "alwaysIncludeMined": "Zawsze uwzględniaj transakcje wydobycia na listach transakcji (może wymagać odświeżenia)",
+    "copyNameSuffixes": "Uwzględnij przyrostek przy kopiowaniu nazw",
+    "addressCopyButtons": "Pokaż przyciski kopiowania obok wszystkich adresów",
+    "nameCopyButtons": "Pokaż przyciski kopiowania obok wszystkich nazw",
+    "blockHashCopyButtons": "Pokaż przyciski kopiowania obok wszystkich skrótów bloków",
+    "showRelativeDates": "Pokaż daty względne zamiast bezwzględnych, jeśli są niedawne",
+    "showRelativeDatesDescription": "Wszędzie w witrynie, jeśli data jest wcześniejsza niż 7 dni, zostanie wyświetlona jako data względna.",
+    "showNativeDates": "Pokaż daty w rodzimym formacie daty z danego języka",
+    "showNativeDatesDescription": "Jeśli wyłączone, daty zawsze będą wyświetlane jako YYYY/MM/DD HH:mm:ss",
+    "transactionsHighlightOwn": "Podświetl własne transakcje w tabeli transakcji",
+    "transactionsHighlightVerified": "Podświetl zweryfikowane adresy w tabeli transakcji",
+    "transactionDefaultRaw": "Domyślnie wybierz zakładkę 'Nieprzetworzone' zamiast 'CommonMeta' na stronie transakcji",
+    "confirmTransactions": "Pytaj o potwierdzenie wszystkich transakcji",
+    "clearTransactionForm": "Wyczyść formularz Wyślij transakcję po kliknięciu „Wyślij”",
+    "sendTransactionDelay": "Czas oczekiwania (w milisekundach) przed zezwoleniem na wysłanie kolejnej transakcji",
+    "defaultPageSize": "Domyślny rozmiar strony dla tabel",
+    "tableHotkeys": "Włącz klawisze skrótów nawigacji tabeli (strzałki w lewo i w prawo)",
+
+    "subMenuPrivacy": "Prywatność",
+    "privacyInfo": "Informacje dotyczące prywatności",
+    "errorReporting": "Włącz automatyczne raportowanie błędów (wymaga odświeżenia)",
+    "messageOnErrorReport": "Pokaż powiadomienie, gdy błąd zostanie automatycznie zgłoszony (wymaga odświeżenia)",
+
+    "subMenuDebug": "Ustawienia debugowania",
+    "advancedWalletFormats": "Zaawansowane formaty portfeli",
+    "menuTranslations": "Tłumaczenia",
+
+    "subTitleTranslations": "Tłumaczenia",
+
+    "translations": {
+      "errorMissingLanguages": "Wydaje się, że brakuje pliku languages.json. Czy TenebraWeb został poprawnie skompilowany?",
+      "errorNoKeys": "Brak kluczy tłumaczenia",
+
+      "columnLanguageCode": "Kod",
+      "columnLanguage": "Język",
+      "columnKeys": "Klucze",
+      "columnMissingKeys": "Brakujące klucze",
+      "columnProgress": "Postęp",
+
+      "tableUntranslatedKeys": "Nieprzetłumaczone klucze",
+      "columnKey": "Klucz",
+      "columnEnglishString": "Angielska wersja",
+
+      "importJSON": "Importuj JSON",
+      "exportCSV": "Eksportuj CSV",
+
+      "importedLanguageTitle": "Zaimportowany Język"
+    }
+  },
+
+  "breadcrumb": {
+    "dashboard": "Pulpit nawigacyjny",
+    "wallets": "Portfele",
+
+    "settings": "Ustawienia",
+    "settingsDebug": "Debug",
+    "settingsTranslations": "Tłumaczenia"
+  },
+
+  "ws": {
+    "errorToken": "Wystąpił błąd podczas łączenia się z serwerem websocket Tenebra.",
+    "errorWS": "Wystąpił błąd podczas łączenia się z serwerem websocket Tenebra (code <1>{{code}}</1>)."
+  },
+
+  "rateLimitTitle": "Osiągnięto limit częstotliwości",
+  "rateLimitDescription": "Zbyt wiele żądań zostało wysłanych do serwera Tenebra w krótkim czasie. Jest to prawdopodobnie spowodowane błędem!",
+
+  "address": {
+    "title": "Adres",
+
+    "walletLabel": "Etykieta:",
+    "walletCategory": "Kategoria:",
+    "contactLabel": "Kontakt:",
+
+    "balance": "Aktualne saldo",
+    "names": "Nazwy",
+    "nameCount_0": "{{count, number}} nazwa",
+    "nameCount_1": "{{count, number}} nazwy",
+    "nameCount_2": "{{count, number}} nazw",
+    "nameCountEmpty": "Brak nazw",
+    "firstSeen": "Pierwszy raz widziany",
+
+    "buttonSendTenebra": "Wyślij Tenebra do {{address}}",
+    "buttonTransferTenebra": "Przenieś Tenebra do {{address}}",
+    "buttonAddContact": "Dodaj do książki adresowej",
+    "buttonEditContact": "Edytuj w książce adresowej",
+    "buttonEditWallet": "Edytuj portfel",
+
+    "tooltipV1Address": "Transakcji nie można wysyłać na adresy w wersji 1, ponieważ zostały one wycofane.",
+
+    "cardRecentTransactionsTitle": "Ostatnie transakcje",
+    "cardNamesTitle": "Nazwy",
+
+    "transactionsError": "Wystąpił błąd podczas pobierania transakcji. Zobacz konsolę, aby uzyskać szczegółowe informacje.",
+    "namesError": "Wystąpił błąd podczas pobierania nazw. Zobacz konsolę, aby uzyskać szczegółowe informacje.",
+
+    "namePurchased": "Zakupiono <1 />",
+    "nameReceived": "Otrzymano <1 />",
+    "namesSeeMore": "Zobacz wszystkie {{count, number}}...",
+
+    "resultInvalidTitle": "Nieprawidłowy adres",
+    "resultInvalid": "To nie wygląda na prawidłowy adres Tenebra.",
+    "resultNotFoundTitle": "Adres nie znaleziony",
+    "resultNotFound": "Ten adres nie został jeszcze zainicjowany w sieci Tenebra.",
+
+    "verifiedCardTitle": "Zweryfikowany adres",
+    "verifiedInactive": "Ta usługa nie jest obecnie aktywna.",
+    "verifiedWebsiteButton": "Odwiedź stronę"
+  },
+
+  "transactionSummary": {
+    "itemID": "ID Transakcji: {{id}}",
+    "itemFrom": "<0>Od:</0> <1 />",
+    "itemTo": "<0>Do:</0> <1 />",
+    "itemName": "<0>Nazwa:</0> <1 />",
+    "itemARecord": "<0>Rekord A:</0> <1 />",
+    "itemARecordRemoved": "(usunięte)",
+    "seeMore": "Zobacz wszystkie {{count, number}}..."
+  },
+
+  "transactions": {
+    "title": "Wszystkie Transakcje",
+    "myTransactionsTitle": "Moje Transakcje",
+    "nameHistoryTitle": "Historia Nazw",
+    "nameTransactionsTitle": "Transakcje Nazw",
+    "searchTitle": "Wyszukiwanie Transakcji",
+
+    "siteTitleWallets": "Moje Transakcje",
+    "siteTitleNetworkAll": "Wszystkie Transakcje",
+    "siteTitleNetworkAddress": "{{address}} - Transakcje",
+    "siteTitleNameHistory": "Historia Nazw",
+    "siteTitleNameSent": "Transakcje Nazw",
+    "siteTitleSearch": "Wyszukiwanie Transakcji",
+
+    "subTitleSearchAddress": "Dotyczące {{address}}",
+    "subTitleSearchName": "Dotyczące {{name}}",
+    "subTitleSearchMetadata": "Z metadanymi '{{query}}'",
+
+    "columnID": "ID",
+    "columnType": "Typ",
+    "columnFrom": "Od",
+    "columnTo": "Do",
+    "columnValue": "Wartość",
+    "columnName": "Nazwa",
+    "columnMetadata": "Metadane",
+    "columnTime": "Czas",
+
+    "tableTotal_0": "{{count, number}} pozycja",
+    "tableTotal_1": "{{count, number}} pozycje",
+    "tableTotal_2": "{{count, number}} pozycji",
+    "tableTotalEmpty": "Brak pozycji",
+
+    "includeMined": "Uwzględnij transakcje wydobycia",
+
+    "resultInvalidTitle": "Nieprawidłowy adres.",
+    "resultInvalid": "To nie wygląda na prawidłowy adres Tenebra.",
+
+    "types": {
+      "transferred": "Transfer",
+      "sent": "Wysłano",
+      "received": "Otrzymano",
+      "mined": "Wydobyto",
+      "name_a_record": "Aktualizacja nazwy",
+      "name_transferred": "Przeniesienie nazwy",
+      "name_sent": "Wysłano nazwę",
+      "name_received": "Otrzymano nazwę",
+      "name_purchased": "Zakup nazwy",
+      "bumped": "Podbita",
+      "unknown": "Nieznany"
+    }
+  },
+
+  "names": {
+    "titleWallets": "Moje Nazwy",
+    "titleNetworkAll": "Wszystkie Nazwy",
+    "titleNetworkAddress": "Wszystkie Nazwy",
+
+    "siteTitleWallets": "Moje Nazwy",
+    "siteTitleNetworkAll": "Wszystkie Nazwy",
+    "siteTitleNetworkAddress": "{{address}} - Nazwy",
+
+    "columnName": "Nazwa",
+    "columnOwner": "Właściciel",
+    "columnOriginalOwner": "Pierwotny Właściciel",
+    "columnRegistered": "Zarejestrowana",
+    "columnUpdated": "Zaktualizowana",
+    "columnARecord": "Rekord A",
+    "columnUnpaid": "Niewypłacone bloki",
+
+    "mobileOwner": "<0>Właściciel:</0> <1 />",
+    "mobileOriginalOwner": "<0>Pierwotny właściciel:</0> <1 />",
+    "mobileRegistered": "Zarejestrowany: <1 />",
+    "mobileUpdated": "Zaktualizowano: <1 />",
+    "mobileARecordTag": "A",
+    "mobileUnpaidTag_0": "{{count, number}} blok",
+    "mobileUnpaidTag_1": "{{count, number}} blocki",
+    "mobileUnpaidTag_2": "{{count, number}} blocków",
+
+    "actions": "Działania",
+    "actionsViewName": "Wyświetl nazwę",
+    "actionsViewOwner": "Wyświetl adres właściciela",
+    "actionsViewOriginalOwner": "Wyświetl adres pierwotnego właściciela",
+    "actionsSendTenebra": "Wyślij Tenebra",
+    "actionsTransferTenebra": "Przenieś Tenebra",
+    "actionsUpdateARecord": "Zaktualizuj rekord A",
+    "actionsTransferName": "Przenieś nazwę",
+
+    "tableTotal_0": "{{count, number}} nazwa",
+    "tableTotal_1": "{{count, number}} nazwy",
+    "tableTotal_2": "{{count, number}} nazw",
+    "tableTotalEmpty": "Brak nazw",
+
+    "resultInvalidTitle": "Nieprawidłowy adres.",
+    "resultInvalid": "To nie wygląda na prawidłowy adres Tenebra.",
+
+    "purchaseButton": "Zakup nazwę"
+  },
+
+  "name": {
+    "title": "Nazwa",
+
+    "buttonSendTenebra": "Wyślij Tenebra do {{name}}",
+    "buttonTransferTenebra": "Przenieś Tenebra do {{name}}",
+    "buttonARecord": "Zaktualizuj rekord A.",
+    "buttonTransferName": "Przenieś nazwę",
+
+    "owner": "Posiadana przez",
+    "originalOwner": "Kupiona przez",
+    "registered": "Zarejestrowana",
+    "updated": "Ostatnia aktualizacja",
+    "unpaid": "Niewypłacone bloki",
+    "unpaidCount_0": "{{count, number}} blok",
+    "unpaidCount_1": "{{count, number}} bloki",
+    "unpaidCount_2": "{{count, number}} bloków",
+    "aRecord": "Rekord A",
+    "aRecordEditTooltip": "Zaktualizuj rekord A",
+
+    "cardRecentTransactionsTitle": "Ostatnie transakcje",
+    "cardHistoryTitle": "Historia nazw",
+    "transactionsError": "Wystąpił błąd podczas pobierania transakcji. Zobacz konsolę, aby uzyskać szczegółowe informacje.",
+    "historyError": "Wystąpił błąd podczas pobierania historii nazw. Zobacz konsolę, aby uzyskać szczegółowe informacje.",
+
+    "resultInvalidTitle": "Błędna nazwa",
+    "resultInvalid": "To nie wygląda na prawidłowe imię Tenebra.",
+    "resultNotFoundTitle": "Nie znaleziono nazwy",
+    "resultNotFound": "Ta nazwa nie istnieje."
+  },
+
+  "blocks": {
+    "title": "Wszystkie Bloki",
+    "titleLowest": "Najniższe Bloki",
+    "siteTitle": "Wszystkie Bloki",
+    "siteTitleLowest": "Najniższe Bloki",
+
+    "columnHeight": "Wysokość",
+    "columnAddress": "Wydobył",
+    "columnHash": "Skrót bloku",
+    "columnValue": "Wartość",
+    "columnDifficulty": "Trudność",
+    "columnTime": "Czas",
+
+    "mobileHeight": "Blok #{{height, number}}",
+    "mobileMiner": "<0>Wydobył: </0> <1 />",
+    "mobileHash": "<0>Skrót: </0> <1 />",
+    "mobileDifficulty": "<0>Trudność: </0> <1 />",
+
+    "tableTotal_0": "{{count, number}} blok",
+    "tableTotal_1": "{{count, number}} bloki",
+    "tableTotal_2": "{{count, number}} bloków",
+    "tableTotalEmpty": "Brak bloków"
+  },
+
+  "block": {
+    "title": "Blok",
+    "siteTitle": "Blok",
+    "siteTitleBlock": "#{{id, number}} - Blok",
+    "subTitleBlock": "#{{id, number}}",
+
+    "height": "Wysokość",
+    "miner": "Wydobył",
+    "value": "Wartość",
+    "time": "Czas",
+    "hash": "Skrót",
+    "difficulty": "Trudność",
+
+    "previous": "Poprzedni",
+    "previousTooltip": "Poprzedni blok (#{{id, number}})",
+    "previousTooltipNone": "Poprzedni blok",
+    "next": "Kolejny",
+    "nextTooltip": "Następny blok (#{{id, number}})",
+    "nextTooltipNone": "Następny blok",
+
+    "resultInvalidTitle": "Nieprawidłowa wysokość bloku",
+    "resultInvalid": "To nie wygląda na prawidłową wysokość bloku.",
+    "resultNotFoundTitle": "Nie znaleziono bloku",
+    "resultNotFound": "Ten blok nie istnieje."
+  },
+
+  "transaction": {
+    "title": "Transakcja",
+    "siteTitle": "Transakcja",
+    "siteTitleTransaction": "#{{id, number}} - Transakcja",
+    "subTitleTransaction": "#{{id, number}}",
+
+    "type": "Typ",
+    "from": "Od",
+    "to": "Do",
+    "address": "Adres",
+    "name": "Nazwa",
+    "value": "Wartość",
+    "time": "Czas",
+    "aRecord": "Rekord A",
+
+    "cardMetadataTitle": "Metadane",
+    "tabCommonMeta": "CommonMeta",
+    "tabRaw": "Nieprzetworzone",
+
+    "commonMetaError": "Przetworzone CommonMeta nie powiodło się.",
+    "commonMetaParsed": "Przetworzone rekordy",
+    "commonMetaParsedHelp": "Wartości te nie były bezpośrednio zawarte w metadanych transakcji, ale zostały wywnioskowane przez parser CommonMeta.",
+    "commonMetaCustom": "Rekordy transakcji",
+    "commonMetaCustomHelp": "Wartości te były bezpośrednio zawarte w metadanych transakcji.",
+    "commonMetaColumnKey": "Klucz",
+    "commonMetaColumnValue": "Wartość",
+
+    "cardRawDataTitle": "Nieprzetworzone",
+    "cardRawDataHelp": "Transakcja dokładnie tak, jak została zwrócona przez Tenebra API.",
+
+    "rawDataColumnKey": "Klucz",
+    "rawDataColumnValue": "Wartość",
+
+    "resultInvalidTitle": "Nieprawidłowy identyfikator transakcji",
+    "resultInvalid": "To nie wygląda na prawidłowy identyfikator transakcji.",
+    "resultNotFoundTitle": "Nie znaleziono transakcji",
+    "resultNotFound": "Ta transakcja nie istnieje."
+  },
+
+  "apiErrorResult": {
+    "resultUnknownTitle": "Nieznany błąd",
+    "resultUnknown": "Szczegółowe informacje można znaleźć w konsoli."
+  },
+
+  "noWalletsResult": {
+    "title": "Nie ma jeszcze portfeli",
+    "subTitle": "Obecnie nie masz żadnych portfeli zapisanych w TenebraWeb, więc nie ma tu jeszcze nic do oglądania. Chcesz dodać portfel?",
+    "subTitleSendTransaction": "Obecnie nie masz żadnych portfeli zapisanych w TenebraWeb, więc nie możesz jeszcze dokonać transakcji. Chcesz dodać portfel?",
+    "button": "Dodaj portfele",
+    "buttonNetworkTransactions": "Wszystkie transakcje",
+    "buttonNetworkNames": "Wszystkie nazwy"
+  },
+
+  "backups": {
+    "importButton": "Importuj kopię zapasową",
+    "exportButton": "Eksportuj kopię zapasową"
+  },
+
+  "import": {
+    "description": "Wklej kod zapasowy (lub zaimportuj z pliku poniżej) i wprowadź odpowiednie hasło główne. Obsługiwane są również kopie zapasowe z TenebraWeb v1.",
+
+    "masterPasswordPlaceholder": "Hasło główne",
+    "masterPasswordRequired": "Wymagane jest hasło główne.",
+    "masterPasswordIncorrect": "Hasło główne jest nieprawidłowe.",
+
+    "appMasterPasswordRequired": "Musisz być uwierzytelniony, aby importować portfele.",
+
+    "fromFileButton": "Importuj z pliku",
+    "textareaPlaceholder": "Wklej tutaj kod zapasowy",
+    "textareaRequired": "Wymagany jest kod zapasowy.",
+    "fileErrorTitle": "Błąd importu",
+    "fileErrorNotText": "Zaimportowany plik musi być plikiem tekstowym.",
+
+    "overwriteCheckboxLabel": "Zaktualizuj istniejące etykiety portfela, jeśli występują konflikty",
+
+    "modalTitle": "Importuj kopię zapasową",
+    "modalButton": "Importuj",
+
+    "detectedFormat": "<0>Wykryty format:</0> <2 />",
+    "detectedFormatTenebraWebV1": "TenebraWeb v1",
+    "detectedFormatTenebraWebV2": "TenebraWeb v2",
+    "detectedFormatInvalid": "Niepoprawny!",
+
+    "progress_0": "Importowanie <1>{{count, number}}</1> pozycji...",
+    "progress_1": "Importowanie <1>{{count, number}}</1> pozycje...",
+    "progress_2": "Importowanie <1>{{count, number}}</1> pozycji...",
+
+    "decodeErrors": {
+      "atob": "Nie można zdekodować kopii zapasowej, ponieważ nie jest to poprawny base64!",
+      "json": "Nie można zdekodować kopii zapasowej, ponieważ nie jest to prawidłowy JSON!",
+      "missingTester": "Nie można zdekodować kopii zapasowej, ponieważ brakuje w niej klucza 'tester'!",
+      "missingSalt": "Nie można zdekodować kopii zapasowej, ponieważ brakuje w niej klucza 'salt'!",
+      "invalidTester": "Nie można zdekodować kopii zapasowej, ponieważ klucz 'tester' jest nieprawidłowego typu!",
+      "invalidSalt": "Nie można zdekodować kopii zapasowej, ponieważ klucz 'salt' jest nieprawidłowego typu!",
+      "invalidWallets": "Nie można zdekodować kopii zapasowej, ponieważ klucz 'wallets' jest nieprawidłowego typu!",
+      "invalidFriends": "Nie można zdekodować kopii zapasowej, ponieważ klucz 'friends' jest nieprawidłowego typu!",
+      "invalidContacts": "Nie można zdekodować kopii zapasowej, ponieważ klucz „kontakty” ma nieprawidłowy typ!",
+      "unknown": "Kopii zapasowej nie można zdekodować z powodu nieznanego błędu. Szczegółowe informacje można znaleźć w konsoli."
+    },
+
+    "walletMessages": {
+      "success": "Portfel został pomyślnie zaimportowany.",
+      "successSkipped": "Portfel o tym samym adresie ({{address}}) oraz właściwościach już istnieje, więc został pominięty ",
+      "successUpdated": "Portfel o tym samym adresie ({{address}}) już istnieje. Jego etykieta została zaktualizowana do \"{{label}}\"",
+      "successSkippedNoOverwrite": "Portfel o tym samym adresie ({{address}}) już istnieje, a Ty zdecydowałeś nie nadpisywać etykiety, więc został pominięty.",
+      "successImportSkipped": "Portfel z tym samym adresem ({{address}}) został już zaimportowany, więc został pominięty.",
+
+      "warningSyncNode": "Ten portfel miał niestandardowy węzeł synchronizacji, który nie jest obsługiwany w TenebraWeb v2. Węzeł synchronizacji został pominięty.",
+      "warningIcon": "Ten portfel miał niestandardową ikonę, która nie jest obsługiwana w TenebraWeb v2. Ikona została pominięta.",
+      "warningLabelInvalid": "Etykieta tego portfela jest nieprawidłowa. Etykieta została pominięta.",
+      "warningCategoryInvalid": "Kategoria tego portfela jest nieprawidłowa. Kategoria została pominięta.",
+      "warningAdvancedFormat": "Ten portfel wykorzystuje zaawansowany format ({{format}}), który ma ograniczone wsparcie w TenebraWeb v2.",
+
+      "errorInvalidTypeString": "Ten portfel nie był ciągiem znaków!",
+      "errorInvalidTypeObject": "Ten portfel nie był obiektem!",
+      "errorDecrypt": "Nie można odszyfrować tego portfela!",
+      "errorPasswordDecrypt": "Nie można odszyfrować hasła do tego portfela!",
+      "errorDataJSON": "Odszyfrowane dane nie były poprawnymi danymi JSON!",
+      "errorUnknownFormat": "Ten portfel używa nieznanego lub nieobsługiwanego formatu!",
+      "errorFormatMissing": "Ten portfel nie posiada formatu!",
+      "errorUsernameMissing": "W portfelu brakuje nazwy użytkownika!",
+      "errorPasswordMissing": "W tym portfelu brakuje hasła!",
+      "errorPrivateKeyMissing": "W tym portfelu brakuje klucza prywatnego!",
+      "errorMasterKeyMissing": "W tym portfelu brakuje klucza głównego!",
+      "errorPrivateKeyMismatch": "Hasło tego portfela nie zostało odwzorowane na jego przechowywany klucz prywatny!",
+      "errorMasterKeyMismatch": "Hasło tego portfela nie zostało przypisane do przechowywanego klucza głównego!",
+      "errorLimitReached": "Osiągnąłeś limit portfela. Obecnie nie możesz dodać więcej portfeli.",
+      "errorUnknown": "Wystąpił nieznany błąd. Szczegółowe informacje można znaleźć w konsoli."
+    },
+
+    "contactMessages": {
+      "success": "Kontakt zaimportowany pomyślnie.",
+      "successSkipped": "Kontakt z tym samym adresem ({{address}}) i ustawieniami już istnieje, więc został pominięty.",
+      "successUpdated": "Kontakt o tym samym adresie ({{address}}) już istnieje. Jego etykieta została zaktualizowana do \"{{label}}\"",
+      "successSkippedNoOverwrite": "Kontakt o tym samym adresie ({{address}}) już istnieje, a użytkownik zdecydował się nie nadpisywać etykiety, więc został pominięty.",
+      "successImportSkipped": "Kontakt o tym samym adresie ({{address}}) został już zaimportowany, więc został pominięty.",
+
+      "warningSyncNode": "Ten kontakt miał niestandardowy węzeł synchronizacji, który nie jest obsługiwany w TenebraWeb v2. Węzeł synchronizacji został pominięty.",
+      "warningIcon": "Ten kontakt miał niestandardową ikonę, która nie jest obsługiwana w TenebraWeb v2. Ikona została pominięta.",
+      "warningLabelInvalid": "Etykieta tego kontaktu była nieprawidłowa. Etykieta została pominięta.",
+
+      "errorInvalidTypeString": "Ten kontakt nie był ciągiem znaków!",
+      "errorInvalidTypeObject": "Ten kontakt nie był obiektem!",
+      "errorDecrypt": "Nie można odszyfrować tego kontaktu!",
+      "errorDataJSON": "Odszyfrowane dane nie były poprawnymi danymi JSON!",
+      "errorAddressMissing": "Ten kontakt nie ma adresu!",
+      "errorAddressInvalid": "Adres tego kontaktu jest nieprawidłowy!",
+      "errorLimitReached": "Osiągnąłeś limit kontaktów. Obecnie nie możesz dodać więcej kontaktów.",
+      "errorUnknown": "Wystąpił nieznany błąd. Szczegółowe informacje można znaleźć w konsoli."
+    },
+
+    "results": {
+      "noneImported": "Nie zaimportowano żadnych nowych portfeli.",
+
+      "walletsImported_0": "<0>{{count, number}} nowy portfel</0> został zaimportowany.",
+      "walletsImported_1": "<0>{{count, number}} nowe portfele</0> zostały zaimportowane.",
+      "walletsImported_2": "<0>{{count, number}} nowych portfeli</0> zostało zaimportowanych.",
+      "walletsSkipped_0": "{{count, number}} portfel został pominięty.",
+      "walletsSkipped_1": "{{count, number}} portfele zostały pominięte.",
+      "walletsSkipped_2": "{{count, number}} portfeli zostało pominiętych.",
+
+      "contactsImported_0": "<0>{{count, number}} nowy kontakt</0> został zaimportowany.",
+      "contactsImported_1": "<0>{{count, number}} nowe kontakty</0> zostali zaimportowani.",
+      "contactsImported_2": "<0>{{count, number}} nowych kontatków</0> zostało zaimportowanych.",
+      "contactsSkipped_0": "{{count, number}} kontakt został pominięty.",
+      "contactsSkipped_1": "{{count, number}} kontakty zostały pominięte.",
+      "contactsSkipped_2": "{{count, number}} kontatków zostało pominiętych.",
+
+      "warnings_0": "Wystąpiło <1>{{count, number}} ostrzeżenie</1> podczas importowania kopii zapasowej.",
+      "warnings_1": "Wystąpiły <1>{{count, number}} ostrzeżenia</1> podczas importowania kopii zapasowej.",
+      "warnings_2": "Wystąpiło <1>{{count, number}} ostrzeżeń</1> podczas importowania kopii zapasowej.",
+      "errors_0": "Wystąpił <1>{{count, number}} błąd</1> podczas importowania kopii zapasowej.",
+      "errors_1": "Wystąpiły <1>{{count, number}} błędy</1> podczas importowania kopii zapasowej.",
+      "errors_2": "Wystąpiło <1>{{count, number}} błędów</1> podczas importowania kopii zapasowej.",
+
+      "treeHeaderWallets": "Portfele",
+      "treeHeaderContacts": "Kontakty",
+
+      "treeWallet": "Portfel {{id}}",
+      "treeContact": "Kontakt {{id}}"
+    }
+  },
+
+  "export": {
+    "modalTitle": "Eksportuj kopię zapasową",
+
+    "description": "Ten tajny kod zawiera Twoje portfele i kontakty z książki adresowej. Możesz go użyć, aby zaimportować je do innej przeglądarki lub wykonać ich kopię zapasową. Nadal będziesz potrzebować hasła głównego do importowania portfeli w przyszłości. <1>Nie udostępniaj nikomu tego kodu.</1>",
+    "size": "Rozmiar: <1 />",
+
+    "buttonSave": "Zapisz do pliku",
+    "buttonCopy": "Skopiuj do schowka"
+  },
+
+  "walletLimitMessage": "Masz więcej portfeli niż obsługuje TenebraWeb. Było to spowodowane przez błąd lub celowo pominąłeś ten limit. Spodziewaj się problemów z synchronizacją.",
+  "contactLimitMessage": "Masz więcej zapisanych kontaktów niż obsługuje TenebraWeb. Było to spowodowane przez błąd lub celowo pominąłeś ten limit. Spodziewaj się problemów z synchronizacją.",
+
+  "optionalFieldUnset": "(nieustawione)",
+
+  "addressPicker": {
+    "placeholder": "Wybierz odbiorcę",
+    "placeholderWalletsOnly": "Wybierz portfel",
+    "placeholderNoWallets": "Adres lub nazwa",
+    "placeholderNoWalletsNoNames": "Adres",
+
+    "hintCurrentBalance": "Aktualne saldo: <1 />",
+
+    "errorAddressRequired": "Adres jest wymagany.",
+    "errorRecipientRequired": "Odbiorca jest wymagany.",
+    "errorWalletRequired": "Portfel jest wymagany.",
+
+    "errorInvalidAddress": "Nieprawidłowy adres lub nazwa.",
+    "errorInvalidAddressOnly": "Nieprawidłowy adres.",
+    "errorInvalidRecipient": "Nieprawidłowy odbiorca. Musi to być adres lub nazwa.",
+    "errorInvalidWalletsOnly": "Nieprawidłowy adres portfela.",
+    "errorEqual": "Odbiorca nie może być ten sam, co nadawca.",
+
+    "categoryWallets": "Portfele",
+    "categoryOtherWallets": "Inne portfele",
+    "categoryAddressBook": "Książka adresowa",
+    "categoryExactAddress": "Dokładny adres",
+    "categoryExactName": "Dokładna nazwa",
+
+    "addressHint": "Saldo: <1 />",
+    "addressHintWithNames": "Nazwy: <1>{{names, number}}</1>",
+    "nameHint": "Właściciel: <1 />",
+    "nameHintNotFound": "Nie znaleziono nazwy.",
+    "walletHint": "Portfel: <1 />"
+  },
+
+  "sendTransaction": {
+    "title": "Wyślij transakcję",
+    "siteTitle": "Wyślij transakcję",
+
+    "modalTitle": "Wyślij transakcję",
+    "modalSubmit": "Wyślij",
+
+    "buttonSubmit": "Wyślij",
+
+    "labelFrom": "Z portfela",
+    "labelTo": "Do adresu / nazwy",
+    "labelAmount": "Ilość",
+    "labelMetadata": "Metadane",
+    "placeholderMetadata": "Opcjonalne metadane",
+
+    "buttonMax": "Max",
+
+    "errorAmountRequired": "Kwota jest wymagana.",
+    "errorAmountNumber": "Kwota musi być liczbą.",
+    "errorAmountTooLow": "Kwota musi wynosić co najmniej 1.",
+    "errorAmountTooHigh": "Brak wystarczających środków w portfelu.",
+
+    "errorMetadataTooLong": "Metadane muszą mieć mniej niż 256 znaków.",
+    "errorMetadataInvalid": "Metadane zawierają nieprawidłowe znaki.",
+
+    "errorWalletGone": "Ten portfel już nie istnieje.",
+    "errorWalletDecrypt": "Nie można odszyfrować Twojego portfela.",
+
+    "errorParameterTo": "Nieprawidłowy odbiorca.",
+    "errorParameterAmount": "Nieprawidłowa kwota.",
+    "errorParameterMetadata": "Nieprawidłowe metadane.",
+    "errorInsufficientFunds": "Brak wystarczających środków w portfelu.",
+    "errorNameNotFound": "Nie można znaleźć nazwy adresata.",
+
+    "errorUnknown": "Nieznany błąd podczas wysyłania transakcji. Szczegółowe informacje można znaleźć w konsoli.",
+
+    "payLargeConfirm": "Czy na pewno chcesz wysłać <1 />?",
+    "payLargeConfirmHalf": "Czy na pewno chcesz wysłać <1 />? To ponad połowa Twojego salda!",
+    "payLargeConfirmAll": "Czy na pewno chcesz wysłać <1 />? To jest całe Twojego saldo!",
+    "payLargeConfirmDefault": "Zamierzasz wysłać klucz prywatny i hasło do swojego portfela na nieoficjalny serwer Tenebra, który da im dostęp do Twoich Tenebra na oficjalnym serwerze. Czy na pewno chcesz to zrobić?",
+
+    "errorNotificationTitle": "Transakcja nie powiodła się",
+    "successNotificationTitle": "Transakcja zakończona sukcesem",
+    "successNotificationContent": "Wysłałeś <1 /> z <3 /> do <5 />.",
+    "successNotificationButton": "Wyświetl transakcję",
+
+    "errorInvalidQuery": "Parametry zapytania były nieprawidłowe, zostały zignorowane."
+  },
+
+  "request": {
+    "title": "Zażądaj Tenebra",
+    "siteTitle": "Zażądaj Tenebra",
+
+    "labelTo": "Odbiorca żądania",
+    "labelAmount": "Żądana kwota",
+    "labelMetadata": "Metadane żądania",
+    "placeholderMetadata": "Metadane",
+
+    "generatedLink": "Wygenerowany link",
+    "generatedLinkHint": "Wyślij komuś ten link, aby zażądać płatnośći."
+  },
+
+  "authFailed": {
+    "title": "Autoryzacja nie powiodła się",
+    "message": "Nie jesteś właścicielem tego adresu.",
+    "messageLocked": "Ten adres był zablokowany.",
+    "alert": "Wiadomość z serwera Tenebra:"
+  },
+
+  "whatsNew": {
+    "title": "Nowości",
+    "siteTitle": "Nowości",
+
+    "titleTenebra": "Tenebra",
+    "titleTenebraWeb": "TenebraWeb",
+
+    "tooltipGitHub": "Wyświetl w GitHub",
+
+    "cardWhatsNewTitle": "Nowości",
+    "cardCommitsTitle": "Commits",
+    "cardCommitsSeeMore": "Zobacz więcej",
+
+    "new": "Nowe!"
+  },
+
+  "namePicker": {
+    "placeholder": "Wybierz nazwę",
+    "placeholderMultiple": "Wybierz nazwy",
+
+    "buttonAll": "Wszystkie",
+
+    "warningTotalLimit": "Wygląda na to, że masz ponad 1000 nazw, co nie jest jeszcze obsługiwane w TenebraWeb v2. Możesz zgłosić problem na GitHub.",
+    "errorLookup": "Wystąpił błąd podczas pobierania nazw. Zobacz konsolę, aby uzyskać szczegółowe informacje."
+  },
+
+  "nameTransfer": {
+    "modalTitle": "Przenieś nazwy",
+
+    "labelNames": "Nazwy",
+    "labelRecipient": "Odbiorca",
+
+    "buttonSubmit": "Przenieś nazwy",
+
+    "errorNameRequired": "Wymagana jest co najmniej jedna nazwa.",
+
+    "errorWalletGone": "Ten portfel już nie istnieje.",
+    "errorWalletDecrypt": "Nie można odszyfrować portfela \"{{address}}\".",
+    "errorParameterNames": "Nieprawidłowe nazwy.",
+    "errorParameterRecipient": "Nieprawidłowy odbiorca.",
+    "errorNameNotFound": "Nie można znaleźć nazwy \"{{name}}\".",
+    "errorNotNameOwner": "Nie jesteś właścicielem jednej lub więcej nazw.",
+    "errorUnknown": "Nieznany błąd podczas przesyłania nazw. Szczegółowe informacje można znaleźć w konsoli.",
+    "errorNotificationTitle": "Transfer nazwy nie powiódł się",
+
+    // Zauważ, że zero i pojedyncze przypadki tych ostrzeżeń nigdy nie będą
+    // pokazane, ale są one przewidziane dla kompatybilności i18n.
+    "warningMultipleNames_0": "Czy na pewno chcesz przenieść <1>{{count, number}}</1> nazwę do <3 />?",
+    "warningMultipleNames_1": "Czy na pewno chcesz przenieść <1>{{count, number}}</1> nazwy do <3 />?",
+    "warningMultipleNames_2": "Czy na pewno chcesz przenieść <1>{{count, number}}</1> nazw do <3 />?",
+    "warningAllNames_0": "Czy na pewno chcesz przenieść <1>{{count, number}}</1> nazwę do <3 />? To wszystkie twoje nazwy!",
+    "warningAllNames_1": "Czy na pewno chcesz przenieść <1>{{count, number}}</1> nazwy do <3 />? To wszystkie twoje nazwy!",
+    "warningAllNames_2": "Czy na pewno chcesz przenieść <1>{{count, number}}</1> nazw do <3 />? To wszystkie twoje nazwy!",
+
+    "successMessage_0": "Nazwa została przesłana pomyślnie",
+    "successMessage_1": "Nazwy zostały pomyślnie przesłane",
+    "successMessage_2": "Nazwy zostały pomyślnie przesłane",
+    "successDescription_0": "Przeniesiono <1>{{count, number}}</1> nazwę do <3 />.",
+    "successDescription_1": "Przeniesiono <1>{{count, number}}</1> nazwy do <3 />..",
+    "successDescription_2": "Przeniesiono <1>{{count, number}}</1> nazw do <3 />.",
+
+    "progress_0": "Przenoszę <1>{{count, number}}</1> nazwę...",
+    "progress_1": "Przenoszę <1>{{count, number}}</1> nazwy...",
+    "progress_2": "Przenoszę <1>{{count, number}}</1> nazw..."
+  },
+
+  "nameUpdate": {
+    "modalTitle": "Zaktualizuj nazwy",
+
+    "labelNames": "Nazwy",
+    "labelARecord": "Rekord A",
+    "placeholderARecord": "Rekord A (opcjonalny)",
+
+    "buttonSubmit": "Zaktualizuj nazwy",
+
+    "errorNameRequired": "Wymagana jest co najmniej jedna nazwa.",
+
+    "errorWalletGone": "Ten portfel już nie istnieje.",
+    "errorWalletDecrypt": "Nie można odszyfrować portfela \"{{address}}\".",
+    "errorParameterNames": "Nieprawidłowe nazwy.",
+    "errorParameterARecord": "Nieprawidłowy rekord A.",
+    "errorNameNotFound": "Nie udało się znaleźć co najmniej jednej nazwy.",
+    "errorNotNameOwner": "Nie jesteś właścicielem jednej lub więcej nazw.",
+    "errorUnknown": "Nieznany błąd podczas aktualizowania nazw. Szczegółowe informacje można znaleźć w konsoli.",
+    "errorNotificationTitle": "Transfer nazwy nie powiódł się",
+
+    "successMessage_0": "Nazwa została zaktualizowana pomyślnie",
+    "successMessage_1": "Nazwy zostały zaktualizowane pomyślnie",
+    "successMessage_2": "Nazwy zostały zaktualizowane pomyślnie",
+    "successDescription_0": "Zaktualizowano <1>{{count, number}}</1> nazwę.",
+    "successDescription_1": "Zaktualizowano <1>{{count, number}}</1> nazwy.",
+    "successDescription_2": "Zaktualizowano <1>{{count, number}}</1> nazw.",
+
+    "progress_0": "Aktualizowanie <1>{{count, number}}</1> nazwy...",
+    "progress_1": "Aktualizowanie <1>{{count, number}}</1> nazw...",
+    "progress_2": "Aktualizowanie <1>{{count, number}}</1> nazw..."
+  },
+
+  "noNamesResult": {
+    "title": "Nie ma jeszcze nazw",
+    "subTitle": "Obecnie nie masz nazw w żadnym ze swoich portfeli zapisanych w TenebraWeb, więc nie ma tu jeszcze nic do oglądania. Chcesz kupić nazwę?",
+    "button": "Zakup nazwę"
+  },
+
+  "namePurchase": {
+    "modalTitle": "Zakup nazwę",
+
+    "nameCost": "Koszt zakupu: <1 />",
+
+    "labelWallet": "Portfel",
+    "labelName": "Nazwa",
+    "placeholderName": "Nazwa",
+
+    "buttonSubmit": "Zakup (<1 />)",
+
+    "errorNameRequired": "Nazwa jest wymagana.",
+    "errorInvalidName": "Błędna nazwa.",
+    "errorNameTooLong": "Nazwa jest za długa.",
+    "errorNameTaken": "Ta nazwa jest już zajęta!",
+    "errorInsufficientFunds": "Twój portfel nie ma wystarczających funduszy na zakup nazwy.",
+
+    "errorWalletGone": "Ten portfel już nie istnieje.",
+    "errorWalletDecrypt": "Nie można odszyfrować portfela \"{{address}}\".",
+    "errorUnknown": "Nieznany błąd zakupu nazwy. Szczegółowe informacje można znaleźć w konsoli.",
+    "errorNotificationTitle": "Zakup nazwy nie powiódł się",
+
+    "successMessage": "Nazwa została zakupiona pomyślnie",
+    "successNotificationButton": "Wyświetl nazwę",
+
+    "nameAvailable": "Nazwa jest dostępna!"
+  },
+
+  "purchaseTenebra": {
+    "modalTitle": "Zakup Tenebra",
+    "connection": "Właśnie nawiązano połączenie z nieoficjalnym serwerem Tenebra. Twoje hasła i portfele Tenebra są zagrożone."
+  },
+
+  "syncWallets": {
+    "errorMessage": "Błąd podczas synchronizacji portfeli",
+    "errorDescription": "Wystąpił błąd podczas synchronizacji Twoich portfeli. Szczegółowe informacje można znaleźć w konsoli."
+  },
+
+  "legacyMigration": {
+    "modalTitle": "Migracja TenebraWeb v1",
+    "description": "Witamy w TenebraWeb v2! Wygląda na to, że korzystałeś już wcześniej z TenebraWeb v1 w tej domenie. <br /><br /><strong>Wprowadź swoje hasło główne, aby przeprowadzić migrację swoich portfeli do nowego formatu.</strong> Wystarczy to zrobić tylko raz .",
+
+    "walletCount_0": "Wykryto <1>{{count, number}}</1> portfel",
+    "walletCount_1": "Wykryto <1>{{count, number}}</1> portfele",
+    "walletCount_2": "Wykryto <1>{{count, number}}</1> portfeli",
+    "contactCount_0": "Wykryto <1>{{count, number}}</1> kontakt",
+    "contactCount_1": "Wykryto <1>{{count, number}}</1> kontakty",
+    "contactCount_2": "Wykryto <1>{{count, number}}</1> kontaktów",
+
+    "masterPasswordLabel": "Hasło główne",
+    "masterPasswordPlaceholder": "Hasło główne",
+
+    "errorPasswordRequired": "Wymagane jest hasło.",
+    "errorPasswordLength": "Musi mieć co najmniej 1 znak.",
+    "errorPasswordIncorrect": "Niepoprawne hasło.",
+    "errorUnknown": "Wystąpił nieznany błąd. Szczegółowe informacje można znaleźć w konsoli.",
+
+    "buttonForgotPassword": "Zapomniałeś hasła",
+    "buttonSubmit": "Rozpocznij migrację",
+
+    "forgotPassword": {
+      "modalTitle": "Pomiń migrację z wersji 1",
+      "modalContent": "Jeśli zapomniałeś hasła głównego do TenebraWeb v1, nie będziesz mógł migrować swoich portfeli. Nigdy więcej nie zostaniesz zapytany. Czy na pewno chcesz pominąć migrację?",
+      "buttonSkip": "Pomiń"
+    }
+  },
+
+  "sortModal": {
+    "title": "Sortuj wyniki",
+
+    "sortBy": "Sortuj według",
+    "sortOrder": "Porządek sortowania",
+    "sortAscending": "Rosnąco",
+    "sortDescending": "Malejąco",
+
+    "buttonReset": "Reset",
+
+    "options": {
+      "transactionsFrom": "Od",
+      "transactionsTo": "Do",
+      "transactionsValue": "Wartość",
+      "transactionsName": "Nazwa",
+      "transactionsTime": "Czas",
+
+      "namesName": "Nazwa",
+      "namesOwner": "Właściciel",
+      "namesOriginalOwner": "Pierwotny właściciel",
+      "namesARecord": "Rekord A",
+      "namesUnpaid": "Niewypłacone bloki",
+      "namesRegistered": "Czas rejestracji",
+      "namesUpdated": "Czas aktualizacji",
+
+      "blocksMiner": "Wydobył",
+      "blocksHash": "Skrót",
+      "blocksValue": "Wartość",
+      "blocksDifficulty": "Trudność",
+      "blocksTime": "Czas"
+    }
+  }
+}

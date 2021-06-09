@@ -1,0 +1,38 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+
+.connection-indicator {
+  vertical-align: middle;
+  line-height: @layout-header-height;
+
+  &::after {
+    content: " ";
+    display: inline-block;
+
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+
+    background-color: @kw-green;
+    box-shadow: 0 0 0 3px rgba(@kw-green, 0.3);
+  }
+
+  &.connection-connecting::after {
+    background-color: @kw-secondary;
+    box-shadow: 0 0 0 3px rgba(@kw-secondary, 0.3);
+  }
+
+  &.connection-disconnected::after {
+    background-color: @kw-red;
+    box-shadow: 0 0 0 3px rgba(@kw-red, 0.3);
+  }
+}
+
+.site-header-element.connection-indicator-el {
+  // Hide the connection indicator entirely on very small screens
+  @media (max-width: 350px) {
+    display: none !important;
+  }
+}

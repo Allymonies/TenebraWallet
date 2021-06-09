@@ -1,0 +1,80 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+
+.address-page {
+  .top-address-row {
+    display: flex;
+    align-items: center;
+
+    .address {
+      display: inline-block;
+      margin-right: @margin-lg;
+      margin-bottom: 0;
+
+      font-size: @font-size-base * 2;
+      font-weight: 500;
+
+      .ant-typography-copy {
+        line-height: 1 !important;
+        margin-left: @padding-xs;
+
+        .anticon {
+          font-size: @font-size-base;
+          vertical-align: 0;
+        }
+      }
+    }
+
+    .ant-btn {
+      margin-right: @margin-md;
+    }
+
+    > .ant-btn:last-child { margin-right: 0; }
+  }
+
+  .address-wallet-row {
+    margin-top: @padding-xs;
+    font-size: 90%;
+
+    .prefix {
+      margin-right: @padding-xs;
+    }
+
+    .address-wallet-verified,
+    .address-wallet-label,
+    .address-wallet-category,
+    .address-wallet-contact {
+      &:not(:last-child) {
+        margin-right: @padding-xs;
+      }
+    }
+  }
+
+  .address-verified-description-row {
+    margin-top: @margin-md;
+    margin-bottom: @margin-md;
+  }
+
+  .address-info-row {
+    max-width: 768px;
+    margin-bottom: @margin-lg;
+
+    .kw-statistic {
+      margin-top: @margin-lg;
+    }
+  }
+
+  .address-card-row {
+    & > .ant-col {
+      margin-bottom: @margin-md;
+    }
+  }
+
+  .address-card-names {
+    .address-name-item {
+      display: block;
+    }
+  }
+}

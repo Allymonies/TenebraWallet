@@ -1,0 +1,60 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+
+.contextual-address {
+  &:not(.contextual-address-allow-wrap) {
+    .address-metaname, .address-name, .address-raw-metaname,
+    .address-wallet {
+      white-space: nowrap;
+    }
+  }
+
+  .address-address, .address-original {
+    white-space: nowrap;
+  }
+
+  .address-original {
+    opacity: 0.8;
+  }
+
+  &.contextual-address-non-existent {
+    &, span, a {
+      color: @text-color-secondary;
+
+      cursor: not-allowed;
+
+      text-decoration-line: underline;
+      text-decoration-style: dotted;
+      text-decoration-color: @text-color-secondary;
+      text-decoration-thickness: 1px;
+    }
+  }
+
+  .address-verified {
+    white-space: nowrap;
+    word-break: break-word;
+
+    &:not(.address-verified-inactive) {
+      &, a {
+        color: fade(@kw-orange, 60%);
+
+        .address-verified-label, .kw-verified-check-icon {
+          color: @kw-orange;
+        }
+      }
+    }
+
+    .kw-verified-check-icon {
+      display: inline-block;
+      font-size: 80%;
+      margin-left: 0.25em;
+
+      svg {
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+}

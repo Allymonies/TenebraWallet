@@ -1,0 +1,18 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+
+.date-time {
+  &-secondary, &-secondary a, &-secondary time {
+    color: @text-color-secondary;
+  }
+
+  &-small, &-small a, &-small time {
+    font-size: 90%;
+
+    @media (max-width: @screen-xl) {
+      font-size: 85%;
+    }
+  }
+}

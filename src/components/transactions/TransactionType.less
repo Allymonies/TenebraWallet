@@ -1,0 +1,37 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+
+.transaction-type {
+  &, a {
+    user-select: none;
+
+    font-weight: bold;
+    color: @text-color-secondary;
+  }
+
+  &-transferred, &-name_transferred {
+    &, a { color: @kw-primary; }
+  }
+  &-sent, &-name_sent, &-name_purchased {
+    &, a { color: @kw-orange; }
+  }
+  &-received, &-mined, &-name_received {
+    &, a { color: @kw-green; }
+  }
+  &-name_a_record {
+    &, a { color: @kw-purple; }
+  }
+  &-bumped {
+    &, a { color: @kw-text-tertiary; }
+  }
+
+  &-no-link {
+    &, a { cursor: default; }
+  }
+
+  @media (max-width: @screen-xl) {
+    font-size: 90%;
+  }
+}

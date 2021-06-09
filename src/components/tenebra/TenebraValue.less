@@ -1,0 +1,51 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+
+.tenebra-value {
+  font-size: 100%;
+
+  white-space: nowrap;
+
+  .anticon svg {
+    /* Hack to make it consistent with Lato */
+    position: relative;
+    bottom: 0.125em;
+    font-size: 0.75em;
+    color: @text-color-secondary;
+  }
+
+  .tenebra-value-amount {
+    font-weight: bold;
+  }
+
+  .tenebra-currency-long {
+    color: @text-color-secondary;
+
+    &::before {
+      content: " ";
+    }
+  }
+
+  &.tenebra-value-green {
+    color: @kw-green;
+
+    .anticon svg, .tenebra-currency-long {
+      color: fade(@kw-green, 75%);
+    }
+  }
+
+  &.tenebra-value-zero {
+    color: @text-color-secondary;
+
+    .anticon svg, .tenebra-currency-long {
+      color: fade(@text-color-secondary, 60%);
+    }
+  }
+}
+
+// The currency symbol appears too dark when inside a button
+.ant-btn.ant-btn-primary .tenebra-value .anticon svg {
+  color: fade(@text-color, 70%);
+}

@@ -1,0 +1,28 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+
+.backup-results-tree {
+  max-height: 480px;
+  overflow-y: auto;
+
+  .backup-result-icon {
+    margin-right: @padding-xs;
+  }
+
+  // Map the different result type icons to their appropriate colours
+  .anticon.backup-result-success { color: @kw-green; }
+  .anticon.backup-result-warning { color: @kw-orange; }
+  .anticon.backup-result-error { color: @kw-red; }
+
+  // Make the non-leaf nodes bold, so the tree is more readable
+  .ant-tree-treenode:not(.backup-results-tree-message) .ant-tree-title {
+    font-weight: 500;
+  }
+
+  // The leaf nodes have an invisible button which takes up space; remove that
+  .ant-tree-switcher-noop {
+    display: none;
+  }
+}

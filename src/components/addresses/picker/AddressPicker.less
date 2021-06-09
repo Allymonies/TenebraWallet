@@ -1,0 +1,56 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../../App.less";
+
+.address-picker {
+  margin-bottom: @form-item-margin-bottom;
+
+  .ant-form-item {
+    margin-bottom: 0;
+  }
+}
+
+.address-picker-dropdown {
+  .address-picker-address-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .tenebra-value {
+      flex: 0;
+      margin-left: auto;
+      padding-left: @padding-sm;
+    }
+
+    .address-picker-item-content {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .address-picker-wallet-label, .address-picker-contact-label {
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    .address-picker-wallet-label + .address-picker-wallet-address,
+    .address-picker-contact-label + .address-picker-contact-address {
+      color: @text-color-secondary;
+    }
+  }
+}
+
+.address-picker-hints {
+  .address-picker-hint {
+    // Disallow wrapping within a hint, but still allow the hints themselves to
+    // be wrapped (see #23)
+    white-space: nowrap;
+    word-break: none;
+  }
+
+  .address-picker-separator {
+    margin: 0 @padding-xs;
+    color: @text-color-secondary;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kqxhx5yn9v": {
+    "label": "SwitchCraft",
+    "description": "This address is the master wallet for the SwitchCraft Minecraft server. It represents the balance of all SwitchCraft players.",
+    "website": "https://switchcraft.pw"
+  },
+  "kitsemmaya": {
+    "label": "BustATenebra",
+    "description": "This address holds the bankroll and player balances for BustATenebra, a Tenebra gambling site.",
+    "website": "https://bustatenebra.its-em.ma"
+  },
+  "ksellshopq": { "label": "Sellshop" },
+  "kr08ac3b4o": { "label": "CodersNet", "isActive": false },
+  "kyq7arbu73": { "label": "CodersNet", "isActive": false },
+  "kek4daddy2": { "label": "KDice", "isActive": false },
+  "klemmyturd": { "label": "KFaucet", "isActive": false },
+  "knfe7aps4c": { "label": "KFaucet", "isActive": false },
+  "kh9w36ea1b": { "label": "KLottery", "isActive": false },
+  "klucky7942": { "label": "KLottery", "isActive": false },
+  "kmineqokuz": { "label": "TenebraMiner.cf", "isActive": false },
+  "kul2kr8t4l": { "label": "LurCraft", "isActive": false },
+  "k5cfswitch": { "label": "SwitchMarket", "isActive": false },
+  "k0resoaker": { "label": "Soak Bot", "isActive": false }
+}

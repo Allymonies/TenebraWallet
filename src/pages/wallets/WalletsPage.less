@@ -1,0 +1,37 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+@import "../../style/table.less";
+
+.wallets-page .table-mobile-list-view {
+  .wallet-mobile-item {
+    .wallet-label {
+      display: block;
+      font-size: 120%;
+    }
+
+    .wallet-value {
+      float: right;
+      font-size: 120%;
+    }
+
+    .wallet-first-seen {
+      display: block;
+      font-size: @font-size-sm;
+      color: @text-color-secondary;
+    }
+
+    .wallet-names {
+      white-space: nowrap;
+    }
+
+    .sep:before {
+      content: "\2013";
+
+      display: inline-block;
+      margin: 0 @padding-xs;
+      color: @text-color-secondary;
+    }
+  }
+}

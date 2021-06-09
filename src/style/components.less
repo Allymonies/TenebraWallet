@@ -1,0 +1,315 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import "./card.less";
+
+.big-menu.ant-menu.ant-menu-inline {
+  width: 100%;
+
+  border: 1px solid @border-color-split;
+
+  .ant-menu-item {
+    border-bottom: 1px solid @border-color-split;
+    margin-bottom: 0;
+
+    user-select: none;
+
+    padding: @padding-xs 0;
+    min-height: 40px;
+    height: auto;
+
+    line-height: @line-height-base;
+    white-space: normal;
+
+    &:last-child { border-bottom: none; }
+  }
+
+  .ant-menu-submenu {
+    border-bottom: 1px solid @border-color-split;
+    &:last-child { border-bottom: none; }
+  }
+
+  .menu-item-description {
+    color: @text-color-secondary;
+    font-size: @font-size-sm;
+  }
+
+  @media (max-width: @screen-md) {
+    // Make the menu full-width on mobile
+    width: 100vw;
+    margin: 0 -@padding-md;
+
+    .ant-menu-sub > .ant-menu-item {
+      padding-left: @padding-sm !important;
+    }
+  }
+
+  @media (max-width: @screen-sm) {
+    margin: 0 -@padding-sm;
+  }
+}
+
+.ant-btn {
+  color: @btn-default-color;
+  border-color: transparent;
+
+  &:hover, &:focus {
+    color: @btn-default-color;
+    border-color: transparent;
+    background: lighten(@kw-lighter, 5%);
+  }
+
+  &:focus { background: lighten(@kw-lighter, 10%); }
+
+  &[disabled] {
+    background: @kw-light;
+    border-color: transparent;
+  }
+
+  &.ant-btn-primary {
+    background: @primary-color;
+
+    &:hover, &:focus { background: lighten(@primary-color, 5%); }
+    &:focus { background: lighten(@primary-color, 10%); }
+
+    &[disabled] {
+      background: fade(@primary-color, 75%);
+      border-color: transparent;
+    }
+  }
+
+  &.ant-btn-dangerous {
+    background: @error-color;
+
+    &:hover, &:focus { background: lighten(@error-color, 5%); }
+    &:focus { background: lighten(@error-color, 10%); }
+  }
+
+  &.ant-btn-background-ghost {
+    border-color: @kw-lighter;
+
+    &:hover, &:focus { border-color: lighten(@kw-lighter, 10%); }
+    &:focus { border-color: lighten(@kw-lighter, 20%); }
+  }
+}
+
+.ant-input:read-only {
+  background: @kw-input-readonly-bg;
+}
+
+.ant-input.ant-input-sm::placeholder {
+  font-size: @font-size-sm;
+}
+
+.ant-input-number {
+  border: none;
+  height: 32px;
+}
+
+.input-monospace {
+  font-family: monospace;
+}
+
+.ant-empty-description {
+  color: fade(@text-color-secondary, 75%);
+}
+
+.ant-empty-img-simple {
+  &-ellipse {
+    fill: @kw-darker;
+  }
+
+  &-g {
+    stroke: @kw-darkest;
+  }
+
+  &-path {
+    fill: @kw-darker;
+    stroke: @kw-darkest;
+  }
+}
+
+.ant-collapse.flush-collapse {
+  & > .ant-collapse-item > .ant-collapse-header {
+    padding: 0;
+    padding-left: 16px;
+
+    .ant-collapse-arrow {
+      padding: 0;
+      top: 7px;
+      left: 0;
+    }
+  }
+
+  & > .ant-collapse-item > .ant-collapse-content > .ant-collapse-content-box {
+    padding: @padding-sm 0;
+  }
+}
+
+.ant-input-group-addon.kw-fake-addon {
+  border: none;
+  flex: 0;
+  width: auto;
+  vertical-align: middle;
+  line-height: @input-height-base;
+  height: @input-height-base;
+
+  .anticon {
+    color: @kw-text-tertiary;
+    font-size: 80%;
+    vertical-align: middle;
+    line-height: @input-height-base;
+  }
+}
+
+.ant-input-group.ant-input-group-compact .ant-btn {
+  border-left: 1px solid @modal-content-bg;
+
+  &.ant-btn-icon-only {
+    padding-left: @padding-sm;
+    padding-right: @padding-sm;
+    width: auto;
+  }
+}
+
+.ant-btn-group .ant-btn {
+  &.ant-btn-left {
+    border-top-left-radius: @btn-border-radius-base;
+    border-bottom-left-radius: @btn-border-radius-base;
+  }
+
+  &.ant-btn-right {
+    border-top-right-radius: @btn-border-radius-base;
+    border-bottom-right-radius: @btn-border-radius-base;
+  }
+}
+
+.ant-pagination {
+  .ant-pagination-item, .ant-pagination-prev, .ant-pagination-next {
+    background: @kw-lighter;
+    border: none;
+
+    button {
+      border: none;
+    }
+
+    &.ant-pagination-disabled {
+      background: @kw-light;
+    }
+
+    &:not(.ant-pagination-disabled):hover {
+      background: lighten(@kw-lighter, 5%);
+      a, button { color: @text-color; }
+    }
+  }
+
+  .ant-pagination-item.ant-pagination-item-active {
+    background: @kw-primary;
+
+    a, button { color: @text-color; }
+
+    &:not(.ant-pagination-disabled):hover {
+      background: @kw-primary;
+    }
+  }
+
+  .ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-ellipsis,
+  .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-ellipsis {
+    color: lighten(@kw-lighter, 5%);
+  }
+}
+
+.text-small { font-size: @font-size-sm; }
+.text-green { color: @kw-green; }
+.text-orange { color: @orange-7; }
+.text-red { color: @kw-red; }
+
+.nyi {
+  text-decoration: line-through;
+
+  span, a {
+    text-decoration: line-through;
+    opacity: 0.5 !important;
+  }
+}
+
+.ant-result.full-page-result {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+}
+
+.ant-dropdown-menu-item {
+  // Make all icons in menu consistent (sometimes the icon may not be a direct
+  // descendent of the menu item)
+  .anticon:first-child {
+    min-width: 12px;
+    margin-right: 8px;
+    font-size: @font-size-sm;
+    vertical-align: -0.1em;
+  }
+
+  // If there's a direct div child, it's probably a descendent of an
+  // AuthorisedAction. Grow it to be full-width, so the click trigger is
+  // correct.
+  // FIXME: This is a hack.
+  >div {
+    margin: -5px -12px;
+    padding: 5px 12px;
+  }
+}
+
+.table-actions {
+  float: right;
+
+  .ant-btn {
+    &:not(:first-child) {
+      margin-left: 1px;
+    }
+
+    &:first-child {
+      padding-left: 0;
+      padding-right: 0;
+      width: 40px;
+    }
+  }
+}
+
+// Correct some commonly used tag colours
+.ant-tag {
+  &.ant-tag-orange {
+    color: lighten(saturate(@kw-orange, 40%), 7%);
+    background: fade(darken(@kw-orange, 25%), 25%);
+    border-color: @alert-warning-border-color;
+  }
+}
+
+// Prevent tooltips from trapping hover and click events for their parents
+.ant-tooltip {
+  pointer-events: none !important;
+}
+
+.ant-modal {
+  @media (max-width: @screen-md) {
+    // Move modals closer to the top on mobile, to improve accessibility
+    top: @layout-header-height;
+
+    .ant-modal-header {
+      padding: @padding-sm @padding-md;
+    }
+
+    .ant-modal-close-x {
+      width: 47px;
+      height: 47px;
+      line-height: 47px;
+    }
+
+    .ant-modal-footer {
+      padding: @padding-xs;
+    }
+  }
+}

@@ -1,0 +1,183 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+
+// Colours
+// ---
+@kw-text: #eaf0fe;
+// @kw-text-secondary: #8991ab;
+@kw-text-secondary: #969fbb; // Adjusted for a11y
+@kw-text-tertiary: mix(@kw-text, @kw-text-secondary, 30%);
+
+@kw-light: #343a56;
+@kw-lighter: #434a6b;
+@kw-slighter: #3c4261;
+@kw-dark: #2a304a;
+@kw-darker: #242942;
+@kw-darkest: #1b1f31;
+
+@kw-primary: CornFlowerBlue;
+@kw-secondary: @kw-lighter;
+@kw-green: #38bf60;
+@kw-blue: #57a3cb;
+@kw-red: #fe4848;
+@kw-orange: #e99547;
+@kw-purple: #ad62ca;
+
+// antd theme overrides
+// ---
+@primary-color: @kw-primary;
+
+@body-background: @kw-dark;
+@text-color: @kw-text;
+@text-color-secondary: @kw-text-secondary;
+@text-color-secondary-dark: @kw-text-secondary;
+@heading-color: @kw-text;
+@success-color: @kw-green;
+@error-color: @kw-red;
+@processing-color: @kw-primary;
+
+@font-size-base: 16px;
+@font-size-sm: 13px;
+
+@border-color-base: #535c80;
+@border-color-split: #404962;
+@kw-border-color-division: #3f4661;
+@kw-border-color-darker: @kw-darkest;
+
+@border-radius-base: 2px;
+
+@component-background: @kw-darkest;
+
+@tooltip-bg: @kw-light;
+@tooltip-color: @text-color;
+
+@popover-background: @kw-light;
+.ant-popover-title {
+  border-bottom-color: @kw-dark;
+}
+
+@layout-header-background: @body-background;
+@layout-header-height: 50px;
+
+@menu-item-color: @text-color;
+@menu-highlight-color: @text-color;
+@menu-bg: @kw-light;
+@menu-item-active-bg: @kw-slighter;
+@menu-item-active-border-width: 0;
+@menu-item-vertical-margin: 0;
+@menu-inline-submenu-bg: @kw-darker;
+
+@menu-dark-bg: @kw-darker;
+@menu-dark-color: @text-color;
+@menu-dark-item-active-bg: mix(@kw-darker, @kw-secondary, 40%);
+@menu-dark-item-hover-bg: mix(@kw-darker, @kw-darkest, 50%);
+
+@input-bg: @kw-lighter;
+@input-border-color: transparent;
+
+@input-color: @text-color;
+@input-placeholder-color: @text-color-secondary;
+
+@input-number-handler-bg: lighten(@kw-lighter, 5%);
+@input-number-handler-hover-bg: @kw-text;
+@input-number-handler-border-color: @kw-light;
+
+@input-addon-bg: @kw-slighter;
+
+@input-disabled-bg: @kw-slighter;
+@kw-input-readonly-bg: @kw-slighter;
+
+@btn-default-color: @text-color;
+@btn-default-bg: @kw-lighter;
+@btn-default-border: transparent;
+
+@btn-font-size-sm: @font-size-sm;
+@btn-line-height: 1.3;
+
+@select-item-selected-bg: @kw-lighter;
+@select-item-active-bg: @kw-slighter;
+@select-clear-background: transparent;
+
+@table-header-bg: @kw-darker;
+@table-header-sort-bg: @kw-darkest;
+@table-header-filter-active-bg: @kw-darkest;
+@table-header-sort-active-bg: @kw-darkest;
+@table-bg: @body-background;
+@table-body-sort-bg: mix(@table-bg, @kw-light, 20%);
+@table-row-hover-bg: @kw-light;
+@table-border-color: @kw-border-color-division;
+.ant-table .ant-table-tbody > tr:last-child > td {
+  border-bottom: 0;
+}
+@table-header-icon-color: @text-color-secondary;
+
+@card-background: mix(@kw-dark, @kw-slighter, 75%);
+@kw-big-card-border-radius: 4px;
+
+// Form required mark
+@label-required-color: @kw-red;
+
+// Alerts
+@alert-success-border-color: darken(@kw-green, 10%);
+@alert-success-bg-color: fade(darken(@kw-green, 25%), 60%);
+@alert-success-icon-color: saturate(@kw-green, 25%);
+@alert-warning-border-color: darken(@kw-orange, 10%);
+@alert-warning-bg-color: fade(darken(@kw-orange, 25%), 60%);
+@alert-warning-icon-color: saturate(@kw-orange, 25%);
+@alert-error-border-color: @kw-red;
+@alert-error-bg-color: fade(#b72626, 60%);
+@alert-error-icon-color: saturate(@kw-red, 25%);
+
+// general theme
+// ---
+@kw-sidebar-bg: @kw-darker;
+@kw-sidebar-header-bg: @kw-darkest;
+@kw-sidebar-item-height: 48px;
+@kw-sidebar-width: 240px;
+@kw-sidebar-collapse-duration: 350ms;
+@kw-sidebar-backdrop-bg: @modal-mask-bg;
+
+@kw-page-header-height: 56px;
+
+// header search
+@kw-header-search-bg: @kw-light;
+@kw-header-search-color: fade(@text-color, 50%);
+@kw-header-search-placeholder-color: @text-color-secondary;
+@kw-header-search-placeholder-font-size: @font-size-sm;
+@kw-header-search-hover-bg: @kw-slighter;
+@kw-header-search-hover-color: fade(@text-color, 75%);
+@kw-header-search-focus-bg: @kw-lighter;
+@kw-header-search-focus-color: @text-color;
+
+// custom scrollbar
+// ---
+@kw-scrollbar-width: 8px;
+@kw-scrollbar-thumb-color: @kw-lighter;
+@kw-scrollbar-thumb-color-hover: @kw-slighter;
+@kw-scrollbar-track-color: rgba(0, 0, 0, 0.1);
+
+// WebKit
+::-webkit-scrollbar {
+  width: @kw-scrollbar-width;
+}
+
+::-webkit-scrollbar-track {
+  background: @kw-scrollbar-track-color;
+  border-radius: @border-radius-base;
+}
+
+::-webkit-scrollbar-thumb {
+  background: @kw-scrollbar-thumb-color;
+  border-radius: @border-radius-base;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: @kw-scrollbar-thumb-color-hover;
+}
+
+// Mozilla
+:root {
+  scrollbar-color: @kw-scrollbar-thumb-color @kw-scrollbar-track-color !important;
+  scrollbar-width: thin !important;
+}

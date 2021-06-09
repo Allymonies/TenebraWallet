@@ -1,0 +1,91 @@
+{
+  "en": {
+    "name": "English (GB)",
+    "country": "GB",
+    "contributors": []
+  },
+  "de": {
+    "name": "German",
+    "nativeName": "Deutsch",
+    "country": "de",
+    "antLocale": "de_DE",
+    "dayjsLocale": "de",
+    "timeagoLocale": "de",
+    "contributors": [
+      {
+        "name": "Lignum",
+        "url": "https://github.com/Lignum"
+      }
+    ]
+  },
+  "fr": {
+    "name": "French",
+    "nativeName": "Français",
+    "country": "fr",
+    "antLocale": "fr_FR",
+    "dayjsLocale": "fr",
+    "timeagoLocale": "fr",
+    "contributors": [
+      {
+        "name": "Anavrins",
+        "url": "https://github.com/xAnavrins"
+      }
+    ]
+  },
+  "nl": {
+    "name": "Dutch",
+    "nativeName": "Nederlands",
+    "country": "nl",
+    "antLocale": "nl_NL",
+    "dayjsLocale": "nl",
+    "timeagoLocale": "nl",
+    "contributors": [
+      {
+        "name": "HydroNitrogen",
+        "url": "https://github.com/Wendelstein7"
+      }
+    ]
+  },
+  "pl": {
+    "name": "Polish",
+    "nativeName": "Polski",
+    "country": "pl",
+    "antLocale": "pl_PL",
+    "dayjsLocale": "pl",
+    "timeagoLocale": "pl",
+    "contributors": [
+      {
+        "name": "Wojbie",
+        "url": "https://github.com/Wojbie"
+      }
+    ]
+  },
+  "pt": {
+    "name": "Portuguese",
+    "nativeName": "Português",
+    "country": "br",
+    "antLocale": "pt_BR",
+    "dayjsLocale": "pt-br",
+    "timeagoLocale": "pt-br",
+    "contributors": [
+      {
+        "name": "Abigail",
+        "url": "https://abby.how"
+      }
+    ]
+  },
+  "vi": {
+    "name": "Vietnamese",
+    "nativeName": "Tiếng Việt",
+    "country": "vn",
+    "antLocale": "vi_VN",
+    "dayjsLocale": "vi",
+    "timeagoLocale": "vi",
+    "contributors": [
+      {
+        "name": "Boom",
+        "url": "https://github.com/signalhunter"
+      }
+    ]
+  }
+}

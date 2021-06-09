@@ -1,0 +1,23 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../../App.less";
+
+.wallet-info-modal {
+  .ant-modal-body {
+    max-height: 500px;
+    overflow-y: auto;
+  }
+
+  .ant-descriptions {
+    margin-bottom: @margin-lg;
+
+    .ant-descriptions-header {
+      margin-bottom: @padding-xs;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

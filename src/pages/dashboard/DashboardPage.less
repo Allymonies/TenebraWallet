@@ -1,0 +1,147 @@
+// Copyright (c) 2020-2021 Drew Lemmy
+// This file is part of TenebraWeb 2 under AGPL-3.0.
+// Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
+@import (reference) "../../App.less";
+
+.dashboard-page {
+  .dashboard-main-row {
+    align-items: stretch;
+
+    & > .ant-col {
+      margin-bottom: @margin-md;
+    }
+  }
+
+  .dashboard-card-wallets {
+    .dashboard-wallets-top-row {
+      margin-bottom: @margin-sm;
+    }
+
+    .dashboard-wallet-item {
+      .wallet-left {
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .wallet-label {
+          font-weight: bold;
+        }
+      }
+
+      .wallet-right {
+        flex: 0;
+        font-size: @font-size-lg;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .dashboard-card-block-value {
+    .dashboard-block-value-main.tenebra-value {
+      font-size: @heading-4-size;
+    }
+
+    .dashboard-block-value-next-decrease {
+      margin: @margin-sm 0;
+    }
+
+    .dashboard-block-value-progress-text {
+      color: @text-color-secondary;
+      font-size: @font-size-sm;
+
+      .dashboard-block-value-progress-middot {
+        margin: 0 @margin-xs;
+      }
+    }
+
+    .dashboard-block-value-empty-description {
+      color: @text-color-secondary;
+      font-size: 90%;
+      margin-top: @margin-sm;
+    }
+  }
+
+  .dashboard-card-block-difficulty {
+    .ant-card-body {
+      height: 100%;
+    }
+
+    .left-col {
+      display: flex;
+      flex-direction: column;
+
+      padding-right: @margin-sm;
+
+      .difficulty-hash-rate {
+        flex: 0;
+
+        color: @text-color-secondary;
+        font-size: 90%;
+
+        &-rate {
+          color: @text-color;
+          font-size: 105%;
+          font-weight: bold;
+        }
+      }
+
+      .spacer {
+        flex: 1;
+      }
+
+      .chart-mode-dropdown {
+        flex: 0;
+
+        width: 100%;
+        margin-top: @margin-sm;
+
+        @media (max-width: @screen-md) {
+          margin-bottom: @margin-sm;
+        }
+      }
+
+      @media (max-width: @screen-md) {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .dashboard-card-motd {
+    .ant-alert {
+      margin-bottom: @margin-md;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .dashboard-card-tips {
+    .ant-card-extra {
+      padding: 0;
+      margin-top: @margin-sm;
+    }
+
+    .dashboard-tips-pagination {
+      user-select: none;
+
+      .ant-btn.ant-btn-link {
+        &:not(:last-child) {
+          margin-right: @margin-lg;
+        }
+
+        padding: 0;
+        // height: auto;
+        font-size: 90%;
+
+        &:hover, &:active, &:focus { background: transparent; }
+        span { color: @text-color-secondary; }
+      }
+    }
+  }
+}
