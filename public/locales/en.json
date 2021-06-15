@@ -360,6 +360,8 @@
     "blockValueBaseValue": "Base value (<1></1>)",
     "blockValueBaseValueNames": "{{count, number}} name",
     "blockValueBaseValueNames_plural": "{{count, number}} names",
+    "blockValueBaseValuePenalties": "{{count, number}} penalty",
+    "blockValueBaseValuePenalties_plural": "{{count, number}} penalties",
     "blockValueNextDecrease": "Decreases by <1></1> in <3>{{count, number}} block</3>",
     "blockValueNextDecrease_plural": "Decreases by <1></1> in <3>{{count, number}} blocks</3>",
     "blockValueReset": "Resets in <1>{{count, number}} block</1>",

@@ -18,6 +18,9 @@ export function BlockValueCard(): JSX.Element {
 
   const work = useSelector((s: RootState) => s.node.detailedWork);
   const hasNames = (work?.unpaid || 0) > 0;
+  const soonestDecrease = Math.min(work ? work.decrease.blocks : 0, work ? work.decreasePenalty.blocks : 0);
+  const soonestDecreaseAmount = (work ? work.decrease.value : 0) + (work ? work.decreasePenalty.value : 0)
+  const resetBlock = Math.max(work ? work.decrease.reset : 0, work ? work.decreasePenalty.reset : 0);
 
   return <Card title={t("dashboard.blockValueCardTitle")} className="kw-card dashboard-card-block-value">
     <Skeleton paragraph={{ rows: 2 }} title={false} active loading={!work}>
@@ -40,29 +43,31 @@ export function BlockValueCard(): JSX.Element {
             <b><Link to="/network/names/new">
               {t("dashboard.blockValueBaseValueNames", { count: work.unpaid })}
             </Link></b>
+            &nbsp;+&nbsp;
+            <span>{t("dashboard.blockValueBaseValuePenalties", { count: work.unpaidPenalties })}</span>
           </div>
 
           {/* Progress bar */}
-          <Progress percent={(work.decrease.reset / 500) * 100} showInfo={false} />
+          <Progress percent={(resetBlock / 500) * 100} showInfo={false} />
 
           {/* Decrease and reset */}
           <div className="dashboard-block-value-progress-text">
             {/* Decrease */}
-            {work.decrease.blocks !== work.decrease.reset && <>
-              <Trans t={t} i18nKey="dashboard.blockValueNextDecrease" count={work.decrease.blocks}>
+            {soonestDecrease !== resetBlock && <>
+              <Trans t={t} i18nKey="dashboard.blockValueNextDecrease" count={soonestDecrease}>
                 Decreases by
-                <TenebraValue value={work.decrease.value} />
+                <TenebraValue value={soonestDecreaseAmount} />
                 in
-                <b style={{ whiteSpace: "nowrap" }}>{{ count: work.decrease.blocks }}</b>
+                <b style={{ whiteSpace: "nowrap" }}>{{ count: soonestDecrease }}</b>
               </Trans>
 
               <span className="dashboard-block-value-progress-middot">&middot;</span>
             </>}
 
             {/* Reset */}
-            <Trans t={t} i18nKey="dashboard.blockValueReset" count={work.decrease.reset}>
+            <Trans t={t} i18nKey="dashboard.blockValueReset" count={resetBlock}>
               Resets in
-              <b style={{ whiteSpace: "nowrap" }}>{{ count: work.decrease.reset }}</b>
+              <b style={{ whiteSpace: "nowrap" }}>{{ count: resetBlock }}</b>
             </Trans>
           </div>
         </>}

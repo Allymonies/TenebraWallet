@@ -12,7 +12,7 @@ export interface TenebraAddress {
 }
 
 export type TenebraTransactionType = "unknown" | "mined" | "name_purchase"
-  | "name_a_record" | "name_transfer" | "transfer";
+  | "name_a_record" | "name_transfer" | "transfer" | "staking";
 export interface TenebraTransaction {
   id: number;
   from: string | null;
@@ -49,11 +49,18 @@ export interface TenebraName {
 export interface TenebraWorkDetailed {
   work: number;
   unpaid: number;
+  unpaidPenalties: number;
 
   base_value: number;
   block_value: number;
 
   decrease: {
+    value: number;
+    blocks: number;
+    reset: number;
+  };
+
+  decreasePenalty: {
     value: number;
     blocks: number;
     reset: number;

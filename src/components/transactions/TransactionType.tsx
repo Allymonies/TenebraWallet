@@ -14,13 +14,13 @@ import "./TransactionType.less";
 
 export type InternalTransactionType = "transferred" | "sent" | "received" | "mined" |
   "name_a_record" | "name_transferred" | "name_sent" | "name_received" |
-  "name_purchased" | "bumped" | "unknown";
+  "name_purchased" | "bumped" | "staking" | "unknown";
 export const INTERNAL_TYPES_SHOW_VALUE: InternalTransactionType[] = [
-  "transferred", "sent", "received", "mined", "name_purchased", "bumped"
+  "transferred", "sent", "received", "mined", "name_purchased", "bumped", "staking"
 ];
 
 export const TYPES_SHOW_VALUE: TenebraTransactionType[] = [
-  "transfer", "mined", "name_purchase"
+  "transfer", "mined", "name_purchase", "staking"
 ];
 
 export function getTransactionType(
@@ -44,6 +44,7 @@ export function getTransactionType(
 
   case "name_a_record": return "name_a_record";
   case "name_purchase": return "name_purchased";
+  case "staking": return "staking";
 
   case "mined": return "mined";
 

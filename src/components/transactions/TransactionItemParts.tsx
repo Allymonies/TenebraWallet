@@ -100,7 +100,7 @@ export function TransactionTo({
   fromWallet, toWallet,
   hideNameAddress, noLink
 }: PartAddressProps): JSX.Element | null {
-  if (type === "name_a_record") return null;
+  if (type === "name_a_record" || (type === "staking" && tx.to === "staking")) return null;
 
   return <span className="transaction-to">
     <Trans i18nKey={tKey("itemTo")}>
@@ -131,7 +131,7 @@ export function TransactionFrom({
   fromWallet,
   hideNameAddress, noLink
 }: Omit<PartAddressProps, "toWallet">): JSX.Element | null {
-  if (type === "name_a_record" || type === "name_purchased" || type === "mined")
+  if (type === "name_a_record" || type === "name_purchased" || type === "mined" || (type === "staking" && tx.from === "staking"))
     return null;
 
   return <span className="transaction-from">
