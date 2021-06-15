@@ -29,7 +29,7 @@ import "./TransactionPage.less";
 /** Set of network transaction types that should only display a single address
  * instead of both 'from' and 'to' */
 const SINGLE_ADDRESS_TYPES: TenebraTransactionType[] = [
-  "mined", "name_purchase", "name_a_record"
+  "mined", "name_purchase", "name_a_record", "staking"
 ];
 
 interface ParamTypes {
@@ -43,7 +43,7 @@ function PageContents({ transaction }: { transaction: TenebraTransaction }): JSX
   // 'to' (e.g. mined, name purchase)
   const onlySingleAddress = SINGLE_ADDRESS_TYPES.includes(type);
   const singleAddress = onlySingleAddress
-    ? (type === "mined" ? to : from)
+    ? (type === "mined" || (type === "staking" && from === "staking") ? to : from)
     : undefined;
 
   return <>

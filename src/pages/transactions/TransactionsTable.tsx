@@ -95,7 +95,7 @@ function getColumns(
       title: tStr("columnFrom"),
       dataIndex: "from", key: "from",
 
-      render: (from, tx) => from && tx.type !== "mined" && (
+      render: (from, tx) => from && tx.type !== "mined" && (tx.type !== "staking" || tx.from !== "staking") && (
         <ContextualAddress
           className="transactions-table-address"
           address={from}
@@ -113,7 +113,7 @@ function getColumns(
       title: tStr("columnTo"),
       dataIndex: "to", key: "to",
 
-      render: (to, tx) => to && tx.type !== "name_purchase" && tx.type !== "name_a_record" && (
+      render: (to, tx) => to && tx.type !== "name_purchase" && tx.type !== "name_a_record" && (tx.type !== "staking" || tx.to !== "staking") && (
         <ContextualAddress
           className="transactions-table-address"
           address={to}
