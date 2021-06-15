@@ -622,6 +622,7 @@
       "sent": "Sent",
       "received": "Received",
       "mined": "Mined",
+      "staking": "Staking",
       "name_a_record": "Updated name",
       "name_transferred": "Moved name",
       "name_sent": "Sent name",

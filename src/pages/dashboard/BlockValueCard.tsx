@@ -19,7 +19,10 @@ export function BlockValueCard(): JSX.Element {
   const work = useSelector((s: RootState) => s.node.detailedWork);
   const hasNames = (work?.unpaid || 0) > 0;
   const soonestDecrease = Math.min(work ? work.decrease.blocks : 0, work ? work.decreasePenalty.blocks : 0);
-  const soonestDecreaseAmount = (work ? work.decrease.value : 0) + (work ? work.decreasePenalty.value : 0)
+  const soonestDecreaseAmount = work ? (work.decrease.blocks < work.decreasePenalty.blocks ? work.decrease.value 
+    : (work.decrease.blocks > work.decreasePenalty.blocks ? work.decreasePenalty.value
+      : work.decrease.value + work.decreasePenalty.value ) )
+  : 0;
   const resetBlock = Math.max(work ? work.decrease.reset : 0, work ? work.decreasePenalty.reset : 0);
 
   return <Card title={t("dashboard.blockValueCardTitle")} className="kw-card dashboard-card-block-value">
