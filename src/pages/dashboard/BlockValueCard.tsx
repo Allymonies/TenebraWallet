@@ -51,12 +51,12 @@ export function BlockValueCard(): JSX.Element {
           </div>
 
           {/* Progress bar */}
-          <Progress percent={(Math.max(work ? work.decrease.reset : 0, work ? work.decreasePenalty.reset : 0) / 500) * 100} showInfo={false} />
+          <Progress percent={(resetBlock / 500) * 100} showInfo={false} />
 
           {/* Decrease and reset */}
           <div className="dashboard-block-value-progress-text">
             {/* Decrease */}
-            {soonestDecrease !== Math.max(work ? work.decrease.reset : 0, work ? work.decreasePenalty.reset : 0) && <>
+            {soonestDecrease !== resetBlock && <>
               <Trans t={t} i18nKey="dashboard.blockValueNextDecrease" count={soonestDecrease}>
                 Decreases by
                 <TenebraValue value={soonestDecreaseAmount} />
@@ -68,9 +68,9 @@ export function BlockValueCard(): JSX.Element {
             </>}
 
             {/* Reset */}
-            <Trans t={t} i18nKey="dashboard.blockValueReset" count={Math.max(work ? work.decrease.reset : 0, work ? work.decreasePenalty.reset : 0)}>
+            <Trans t={t} i18nKey="dashboard.blockValueReset" count={resetBlock}>
               Resets in
-              <b style={{ whiteSpace: "nowrap" }}>{{ count: Math.max(work ? work.decrease.reset : 0, work ? work.decreasePenalty.reset : 0) }}</b>
+              <b style={{ whiteSpace: "nowrap" }}>{{ count: resetBlock }}</b>
             </Trans>
           </div>
         </>}
