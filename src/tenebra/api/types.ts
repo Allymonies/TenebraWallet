@@ -26,6 +26,12 @@ export interface TenebraTransaction {
   type: TenebraTransactionType;
 }
 
+export interface TenebraStake {
+  owner: string;
+  stake: number;
+  active: boolean;
+}
+
 export interface TenebraBlock {
   height: number;
   address: string;

@@ -11,7 +11,7 @@ import { Link, useHistory } from "react-router-dom";
 
 import { SmallResult } from "./SmallResult";
 
-export type ResultType = "transactions" | "names" | "sendTransaction";
+export type ResultType = "transactions" | "names" | "sendTransaction" | "staking";
 
 interface Props {
   type?: ResultType;

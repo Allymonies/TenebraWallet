@@ -45,6 +45,7 @@
     "sort": "Sort results",
 
     "settings": "Settings",
+    "staking": "Staking",
     "more": "More"
   },
 
@@ -68,6 +69,29 @@
     "updateTitle": "Update available!",
     "updateDescription": "A new version of TenebraWeb is available. Please reload.",
     "updateReload": "Reload"
+  },
+
+  "staking": {
+    "modalSubmit": "Submit",
+    "buttonSubmit": "Submit",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "errorInvalidQuery": "The query parameters were invalid, they were ignored.",
+    "errorUnknown": "Unknown error sending transaction. See console for details.",
+    "errorNotificationTitle": "Transaction failed",
+    "errorParameterAmount": "Invalid amount.",
+    "errorInsufficientFunds": "Insufficient funds in wallet or stake.",
+    "labelAction": "Action",
+    "labelWallet": "Staking wallet",
+    "stakeLargeConfirm": "Are you sure you want to stake <1 />?",
+    "stakeLargeConfirmHalf": "Are you sure you want to stake <1 />? This is over half your balance!",
+    "stakeLargeConfirmAll": "Are you sure you want to stake <1 />? This is your entire balance!",
+    "successNotificationTitle": "Transaction successful",
+    "successNotificationContent": "Your new stake balance is <1 /> after a staking action with <3 />.",
+    "successNotificationButton": "View transactions",
+    "modalTitle": "Staking",
+    "siteTitle": "Staking",
+    "title": "Staking"
   },
 
   "dialog": {

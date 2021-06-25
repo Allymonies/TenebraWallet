@@ -2,7 +2,7 @@
 // This file is part of TenebraWeb 2 under AGPL-3.0.
 // Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
 import { Layout, Menu, Grid } from "antd";
-import { SendOutlined, DownloadOutlined, MenuOutlined } from "@ant-design/icons";
+import { SendOutlined, DownloadOutlined, MenuOutlined, BankOutlined } from "@ant-design/icons";
 
 import { useTranslation } from "react-i18next";
 
@@ -53,6 +53,13 @@ export function AppHeader({ sidebarCollapsed, setSidebarCollapsed }: Props): JSX
       <Menu.Item key="2" icon={<DownloadOutlined />}>
         <ConditionalLink to="/request" matchTo aria-label={t("nav.request")}>
           {t("nav.request")}
+        </ConditionalLink>
+      </Menu.Item>
+
+      {/* Staking Tenebra */}
+      <Menu.Item key="3" icon={<BankOutlined />}>
+        <ConditionalLink to="/staking" matchTo aria-label={t("nav.staking")}>
+          {t("nav.staking")}
         </ConditionalLink>
       </Menu.Item>
     </Menu>}

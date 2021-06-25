@@ -10,6 +10,7 @@ import { ContactsPage } from "@pages/contacts/ContactsPage";
 
 import { SendTransactionPage } from "@pages/transactions/send/SendTransactionPage";
 import { RequestPage } from "@pages/transactions/request/RequestPage";
+import { StakingPage } from "@pages/staking/StakingPage";
 
 import { AddressPage } from "@pages/addresses/AddressPage";
 import { BlocksPage } from "@pages/blocks/BlocksPage";
@@ -46,9 +47,10 @@ export const APP_ROUTES: AppRoute[] = [
   { path: "/me/names", name: "myNames",
     component: <NamesPage listingType={NamesListing.WALLETS} /> },
 
-  // Payments
+  // Payments & Staking
   { path: "/send", name: "sendTransaction", component: <SendTransactionPage /> },
   { path: "/request", name: "request", component: <RequestPage /> },
+  { path: "/staking", name: "staking", component: <StakingPage /> },
 
   // Network explorer
   { path: "/network/addresses/:address", name: "address", component: <AddressPage /> },
