@@ -100,7 +100,7 @@ export interface TenebraCurrency {
 }
 export const DEFAULT_CURRENCY: TenebraCurrency = {
   address_prefix: "k", name_suffix: "kst",
-  currency_name: "Tenebra", currency_symbol: "KST"
+  currency_name: "Tenebra", currency_symbol: "TST"
 };
 
 export interface TenebraMOTDBase {

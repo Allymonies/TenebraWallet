@@ -4,16 +4,18 @@
 import { store } from "@app";
 import * as actions from "@actions/WalletsActions";
 
-import { TenebraAddressWithNames, lookupAddresses } from "../../api/lookup";
+import { TenebraAddressWithNames, lookupAddresses, lookupStakes } from "../../api/lookup";
 
 import { Wallet, saveWallet } from "..";
 
 import Debug from "debug";
+import { TenebraStake } from "@api/types";
 const debug = Debug("tenebraweb:sync-wallets");
 
 function syncWalletProperties(
   wallet: Wallet,
   address: TenebraAddressWithNames | null,
+  stake: TenebraStake | null,
   syncTime: Date
 ): Wallet {
   if (address) {
@@ -22,7 +24,8 @@ function syncWalletProperties(
       ...(address.balance   !== undefined ? { balance: address.balance } : {}),
       ...(address.names     !== undefined ? { names: address.names } : {}),
       ...(address.firstseen !== undefined ? { firstSeen: address.firstseen } : {}),
-      lastSynced: syncTime.toISOString()
+      lastSynced: syncTime.toISOString(),
+      stake: stake ? stake.stake : wallet.stake
     };
   } else {
     // Wallet was unsyncable (address not found), clear its properties
@@ -45,11 +48,13 @@ export async function syncWallet(
   // Fetch the data from the sync node (e.g. balance)
   const { address } = wallet;
   const lookupResults = await lookupAddresses([address], true);
+  const lookupStakeResults = await lookupStakes([address]);
 
   debug("synced individual wallet %s (%s): %o", wallet.id, wallet.address, lookupResults);
 
   const tenebraAddress = lookupResults[address];
-  syncWalletUpdate(wallet, tenebraAddress, dontSave);
+  const tenebraStake = lookupStakeResults[address];
+  syncWalletUpdate(wallet, tenebraAddress, tenebraStake, dontSave);
 }
 
 /** Given an already synced wallet, save it to local storage, and dispatch the
@@ -57,10 +62,11 @@ export async function syncWallet(
 export function syncWalletUpdate(
   wallet: Wallet,
   address: TenebraAddressWithNames | null,
+  stake: TenebraStake | null,
   dontSave?: boolean
 ): void {
   const syncTime = new Date();
-  const updatedWallet = syncWalletProperties(wallet, address, syncTime);
+  const updatedWallet = syncWalletProperties(wallet, address, stake, syncTime);
 
   // Save the wallet to local storage, unless this was an external sync action
   if (!dontSave) saveWallet(updatedWallet);
@@ -84,12 +90,14 @@ export async function syncWallets(): Promise<void> {
   // Fetch all the data from the sync node (e.g. balances)
   const addresses = Object.values(wallets).map(w => w.address);
   const lookupResults = await lookupAddresses(addresses, true);
+  const lookupStakeResults = await lookupStakes(addresses);
 
   // Create a WalletMap with the updated wallet properties
   const updatedWallets = Object.entries(wallets).map(([_, wallet]) => {
     const tenebraAddress = lookupResults[wallet.address];
     if (!tenebraAddress) return wallet; // Skip unsyncable wallets
-    return syncWalletProperties(wallet, tenebraAddress, syncTime);
+    const tenebraStake = lookupStakeResults[wallet.address];
+    return syncWalletProperties(wallet, tenebraAddress, tenebraStake, syncTime);
   }).reduce((o, wallet) => ({ ...o, [wallet.id]: wallet }), {});
 
   // Save the wallets to local storage (unless dontSave is set)

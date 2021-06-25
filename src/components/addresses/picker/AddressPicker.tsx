@@ -34,6 +34,7 @@ interface Props {
   otherPickerValue?: string;
 
   walletsOnly?: boolean;
+  showStake?: boolean;
   noWallets?: boolean;
   noNames?: boolean;
   nameHint?: boolean;
@@ -57,6 +58,7 @@ export function AddressPicker({
   otherPickerValue,
 
   walletsOnly,
+  showStake,
   noWallets,
   noNames,
   nameHint,
@@ -129,7 +131,7 @@ export function AddressPicker({
 
   // Fetch an address or name hint if possible
   const { pickerHints, foundName } = usePickerHints(
-    nameHint, cleanValue, hasExactName, suppressUpdates
+    nameHint, cleanValue, hasExactName, suppressUpdates, showStake
   );
 
   // Re-validate this field if the picker hints foundName changed

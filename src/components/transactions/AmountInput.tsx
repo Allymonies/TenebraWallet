@@ -10,6 +10,13 @@ import { useWallets } from "@wallets";
 import { useCurrency } from "@utils/tenebra";
 
 import { TenebraSymbol } from "@comp/tenebra/TenebraSymbol";
+import { StakingActionType } from "@pages/staking/StakingForm";
+
+export interface StakingFormValues {
+  from: string;
+  action: StakingActionType;
+  amount: number;
+}
 
 interface Props {
   from?: string;
@@ -18,6 +25,7 @@ interface Props {
   label?: ReactNode;
   required?: boolean;
   disabled?: boolean;
+  stakingFormValues?: Partial<StakingFormValues>;
 
   tabIndex?: number;
 }
@@ -29,6 +37,7 @@ export function AmountInput({
   label,
   required,
   disabled,
+  stakingFormValues,
 
   tabIndex,
   ...props
@@ -44,7 +53,11 @@ export function AmountInput({
   function onClickMax() {
     if (!from) return;
     const currentWallet = walletAddressMap[from];
-    setAmount(currentWallet?.balance || 0);
+    if (!stakingFormValues || (stakingFormValues.action && stakingFormValues.action === "deposit")) {
+      setAmount(currentWallet?.balance || 0);
+    } else if (stakingFormValues.action && stakingFormValues.action === "withdraw") {
+      setAmount(currentWallet?.stake || 0);
+    }
   }
 
   const amountRequired = required === undefined || !!required;
@@ -57,7 +70,7 @@ export function AmountInput({
     <Input.Group compact style={{ display: "flex" }}>
       {/* Prepend the Tenebra symbol if possible. Note that ant's InputNumber
         * doesn't support addons, so this has to be done manually. */}
-      {(currency_symbol || "KST") === "KST" && (
+      {(currency_symbol || "TST") === "TST" && (
         <span className="ant-input-group-addon kw-fake-addon currency-prefix">
           <TenebraSymbol />
         </span>
@@ -91,8 +104,13 @@ export function AmountInput({
 
               const currentWallet = walletAddressMap[from];
               if (!currentWallet) return;
-              if (value > (currentWallet.balance || 0))
-                throw t("sendTransaction.errorAmountTooHigh");
+              if (!stakingFormValues || (stakingFormValues.action && stakingFormValues.action === "deposit")) {
+                if (value > (currentWallet.balance || 0))
+                  throw t("sendTransaction.errorAmountTooHigh");
+              } else if (stakingFormValues.action && stakingFormValues.action === "withdraw") {
+                if (value > (currentWallet.stake || 0))
+                  throw t("sendTransaction.errorAmountTooHigh");
+              }
             }
           },
         ]}
@@ -108,7 +126,7 @@ export function AmountInput({
 
       {/* Currency suffix */}
       <span className="ant-input-group-addon kw-fake-addon">
-        {currency_symbol || "KST"}
+        {currency_symbol || "TST"}
       </span>
 
       {/* Max value button */}

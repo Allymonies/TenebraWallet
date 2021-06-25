@@ -25,7 +25,7 @@ import { handleStakingError } from "./handleErrors";
 import { useAuthFailedModal } from "@api/AuthFailed";
 
 import { AddressPicker } from "@comp/addresses/picker/AddressPicker";
-import { AmountInput } from "@comp/transactions/AmountInput";
+import { AmountInput, StakingFormValues } from "@comp/transactions/AmountInput";
 import { StakingConfirmModalContents } from "./StakingConfirmModal";
 
 import awaitTo from "await-to-js";
@@ -39,16 +39,10 @@ export const METADATA_REGEXP = /^[\x20-\x7F\n]*$/i;
 
 export type StakingActionType = "deposit" | "withdraw";
 
-export interface FormValues {
-  from: string;
-  action: StakingActionType;
-  amount: number;
-}
-
 interface Props {
   from?: Wallet | string;
   amount?: number;
-  form: FormInstance<FormValues>;
+  form: FormInstance<StakingFormValues>;
   triggerSubmit: () => Promise<void>;
 }
 
@@ -79,6 +73,8 @@ function StakingForm({
 
   const [from, setFrom] = useState(initialFrom);
 
+  const [formValues, setFormValues] = useState<Partial<StakingFormValues>>();
+
   // Focus the 'to' input on initial render
   const toRef = useRef<RefSelectProps>(null);
   useMountEffect(() => {
@@ -86,10 +82,11 @@ function StakingForm({
   });
 
   function onValuesChange(
-    changed: Partial<FormValues>,
-    values: Partial<FormValues>
+    changed: Partial<StakingFormValues>,
+    values: Partial<StakingFormValues>
   ) {
     setFrom(values.from || "");
+    setFormValues(values);
 
     // Update and save the lastTxFrom so the next time the modal is opened
     // it will remain on this address
@@ -103,7 +100,7 @@ function StakingForm({
     }
   }
 
-  const initialValues: FormValues = useMemo(() => ({
+  const initialValues: StakingFormValues = useMemo(() => ({
     from: initialFrom,
     amount: initialAmount || 1,
     action:  "deposit"
@@ -117,6 +114,7 @@ function StakingForm({
   // If the initial values change, refresh the form
   useEffect(() => {
     form?.setFieldsValue(initialValues);
+    setFormValues(initialValues);
   }, [form, initialValues]);
 
   return <Form
@@ -140,6 +138,7 @@ function StakingForm({
       <Col span={24} md={12}>
         <AddressPicker
           walletsOnly
+          showStake
           name="from"
           label={t("staking.labelWallet")}
           value={from}
@@ -165,6 +164,7 @@ function StakingForm({
     <AmountInput
       from={from === undefined ? initialFrom : from}
       setAmount={amount => form.setFieldsValue({ amount })}
+      stakingFormValues={formValues}
       tabIndex={3}
     />
   </Form>;
@@ -179,7 +179,7 @@ interface StakingFormHookProps {
 }
 
 interface StakingFormHookResponse {
-  form: FormInstance<FormValues>;
+  form: FormInstance<StakingFormValues>;
   triggerSubmit: () => Promise<void>;
   triggerReset: () => void;
   isSubmitting: boolean;
@@ -195,7 +195,7 @@ export function useStakingForm({
 }: StakingFormHookProps = {}): StakingFormHookResponse {
   const { t } = useTranslation();
 
-  const [form] = Form.useForm<FormValues>();
+  const [form] = Form.useForm<StakingFormValues>();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Used to check for warning on large transactions
@@ -222,7 +222,7 @@ export function useStakingForm({
 
   // Take the form values and known wallet and submit the transaction
   async function submitStakingTransaction(
-    { amount, action }: FormValues,
+    { amount, action }: StakingFormValues,
     wallet: Wallet
   ): Promise<void> {
     // Manually get the master password from the store state, because this might

@@ -41,9 +41,9 @@ export const TenebraValue = ({
 
   return (
     <span {...props} className={classes}>
-      {icon || ((currencySymbol || "KST") === "KST" && <TenebraSymbol />)}
+      {icon || ((currencySymbol || "TST") === "TST" && <TenebraSymbol />)}
       <span className="tenebra-value-amount">{(value || 0).toLocaleString()}</span>
-      {long && <span className="tenebra-currency-long">{currencySymbol || "KST"}</span>}
+      {long && <span className="tenebra-currency-long">{currencySymbol || "TST"}</span>}
     </span>
   );
 };

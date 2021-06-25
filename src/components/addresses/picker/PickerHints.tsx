@@ -10,7 +10,7 @@ import {
 import { useWallets } from "@wallets";
 
 import * as api from "@api";
-import { TenebraAddressWithNames, lookupAddress } from "@api/lookup";
+import { TenebraAddressWithNames, lookupAddress, lookupStakes } from "@api/lookup";
 import { TenebraName } from "@api/types";
 
 import { WalletHint } from "./WalletHint";
@@ -38,7 +38,8 @@ export function usePickerHints(
   nameHint?: boolean,
   value?: string,
   hasExactName?: boolean,
-  suppressUpdates?: boolean
+  suppressUpdates?: boolean,
+  showStake?: boolean
 ): PickerHintsRes {
   // Used for clean-up
   const isMounted = useRef(true);
@@ -48,6 +49,7 @@ export function usePickerHints(
 
   // Handle showing an address or name hint if the value is valid
   const [foundAddress, setFoundAddress] = useState<TenebraAddressWithNames | false | undefined>();
+  const [foundStake, setFoundStake] = useState<number | false | undefined>();
   const [foundName, setFoundName] = useState<TenebraName | false | undefined>();
 
   // To auto-refresh address balances, we need to subscribe to the address.
@@ -69,7 +71,8 @@ export function usePickerHints(
     value: string,
     hasAddress?: boolean,
     hasName?: boolean,
-    nameHint?: boolean
+    nameHint?: boolean,
+    showStake?: boolean
   ) => {
     // Skip doing anything when unmounted to avoid illegal state updates
     if (!isMounted.current) return debug("unmounted skipped lookupHint");
@@ -87,10 +90,16 @@ export function usePickerHints(
         if (!isMounted.current)
           return debug("unmounted skipped lookupHint hasAddress try");
         setFoundAddress(address);
+        if (showStake) {
+          const lookupStakeResults = await lookupStakes([value]);
+          const tenebraStake = lookupStakeResults[value];
+          setFoundStake(tenebraStake?.stake);
+        }
       } catch (ignored) {
         if (!isMounted.current)
           return debug("unmounted skipped lookupHint hasAddress catch");
         setFoundAddress(false);
+        setFoundStake(false);
       }
     } else if (hasName) {
       // Lookup a name
@@ -122,6 +131,7 @@ export function usePickerHints(
     if (!value) {
       setFoundAddress(undefined);
       setFoundName(undefined);
+      setFoundStake(undefined);
       setValidAddress(undefined);
       return;
     }
@@ -143,11 +153,8 @@ export function usePickerHints(
     }
 
     // Perform the lookup (debounced)
-    lookupHint(nameSuffix, value, hasValidAddress, hasExactName, nameHint);
-  }, [
-    lookupHint, nameSuffix, value, addressPrefix, hasExactName, nameHint,
-    validAddress, lastTransactionID, joinedAddressList, suppressUpdates
-  ]);
+    lookupHint(nameSuffix, value, hasValidAddress, hasExactName, nameHint, showStake);
+  }, [lookupHint, nameSuffix, value, addressPrefix, hasExactName, nameHint, validAddress, lastTransactionID, joinedAddressList, suppressUpdates, showStake]);
 
   // Clean up the debounced function when unmounting
   useEffect(() => {
@@ -191,7 +198,7 @@ export function usePickerHints(
 
       {/* Show an address hint if possible */}
       {showAddressHint && (
-        <AddressHint address={foundAddress || undefined} nameHint={nameHint} />
+        <AddressHint address={foundAddress || undefined} nameHint={nameHint} stake={foundStake || undefined} />
       )}
 
       {/* Show a name hint if possible */}

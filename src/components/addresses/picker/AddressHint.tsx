@@ -9,9 +9,10 @@ import { TenebraValue } from "@comp/tenebra/TenebraValue";
 interface Props {
   address?: TenebraAddressWithNames;
   nameHint?: boolean;
+  stake?: number;
 }
 
-export function AddressHint({ address, nameHint }: Props): JSX.Element {
+export function AddressHint({ address, nameHint, stake }: Props): JSX.Element {
   const { t } = useTranslation();
 
   return <span className="address-picker-hint address-picker-address-hint">
@@ -23,10 +24,19 @@ export function AddressHint({ address, nameHint }: Props): JSX.Element {
         </Trans>
       )
       : (
-        // Otherwise, show the balance
-        <Trans t={t} i18nKey="addressPicker.addressHint">
-          Balance: <TenebraValue value={address?.balance || 0} />
-        </Trans>
+        stake ?
+          // Otherwise, show the balance
+          (
+            <Trans t={t} i18nKey="addressPicker.addressHintWithStake">
+              Balance: <TenebraValue value={address?.balance || 0} /> Stake: <TenebraValue value={stake || 0} />
+            </Trans>
+          )
+          :
+          (
+            <Trans t={t} i18nKey="addressPicker.addressHint">
+              Balance: <TenebraValue value={address?.balance || 0} />
+            </Trans>
+          )
       )
     }
   </span>;

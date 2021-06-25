@@ -20,6 +20,7 @@ export interface Wallet {
   // Fetched from API
   address: string;
   balance?: number;
+  stake?: number;
   names?: number;
   firstSeen?: string;
   lastSynced?: string;

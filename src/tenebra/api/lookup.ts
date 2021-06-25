@@ -1,7 +1,7 @@
 // Copyright (c) 2020-2021 Drew Lemmy
 // This file is part of TenebraWeb 2 under AGPL-3.0.
 // Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
-import { TenebraAddress, TenebraTransaction, TenebraName, TenebraBlock } from "./types";
+import { TenebraAddress, TenebraTransaction, TenebraName, TenebraBlock, TenebraStake } from "./types";
 import * as api from ".";
 
 import {
@@ -18,9 +18,15 @@ interface LookupAddressesResponse {
   notFound: number;
   addresses: Record<string, TenebraAddress | null>;
 }
+interface LookupStakesResponse {
+  found: number;
+  notFound: number;
+  stakes: Record<string, TenebraStake | null>;
+}
 
 export interface TenebraAddressWithNames extends TenebraAddress { names?: number }
 export type AddressLookupResults = Record<string, TenebraAddressWithNames | null>;
+export type StakeLookupResults = Record<string, TenebraStake | null>;
 
 export async function lookupAddresses(
   addresses: string[],
@@ -36,6 +42,25 @@ export async function lookupAddresses(
     );
 
     return data.addresses;
+  } catch (err) {
+    criticalError(err);
+  }
+
+  return {};
+}
+
+export async function lookupStakes(
+  addresses: string[]
+): Promise<StakeLookupResults> {
+  if (!addresses || addresses.length === 0) return {};
+
+  try {
+    const data = await api.get<LookupStakesResponse>(
+      "lookup/stakes/"
+      + encodeURIComponent(addresses.join(","))
+    );
+
+    return data.stakes;
   } catch (err) {
     criticalError(err);
   }
