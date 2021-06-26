@@ -62,11 +62,11 @@ export async function syncWallet(
 export function syncWalletUpdate(
   wallet: Wallet,
   address: TenebraAddressWithNames | null,
-  stake: TenebraStake | null,
+  stake?: TenebraStake | null,
   dontSave?: boolean
 ): void {
   const syncTime = new Date();
-  const updatedWallet = syncWalletProperties(wallet, address, stake, syncTime);
+  const updatedWallet = syncWalletProperties(wallet, address, stake ?? null, syncTime);
 
   // Save the wallet to local storage, unless this was an external sync action
   if (!dontSave) saveWallet(updatedWallet);
