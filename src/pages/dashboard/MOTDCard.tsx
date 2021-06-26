@@ -1,7 +1,7 @@
 // Copyright (c) 2020-2021 Drew Lemmy
 // This file is part of TenebraWeb 2 under AGPL-3.0.
 // Full details: https://github.com/tmpim/TenebraWeb2/blob/master/LICENSE.txt
-import { Card, Alert } from "antd";
+import { Card } from "antd";
 
 import { useSelector } from "react-redux";
 import { RootState } from "@store";
@@ -14,7 +14,7 @@ import { DateTime } from "@comp/DateTime";
 
 export function MOTDCard(): JSX.Element {
   const { t } = useTranslation();
-  const { motd, motdSet, endpoint, debugMode }
+  const { motd, motdSet }
     = useSelector((s: RootState) => s.node.motd);
 
   // Make relative links start with the sync node, and override all links to
@@ -22,7 +22,6 @@ export function MOTDCard(): JSX.Element {
   const MarkdownLink = useMarkdownLink();
 
   return <Card title={t("dashboard.motdCardTitle")} className="kw-card dashboard-card-motd">
-    {(debugMode || (endpoint ? btoa([...endpoint] as any) !== atob("YXl4eUxHa3NjeXgwTEM0c1l5eGxMSElzYVN4aExIUXNMaXh1TEdVc2RBPT0=") : false)) && <Alert type="error" message={t("dashboard.motdDebugMode")} />}
 
     <p>
       <Markdown options={{
