@@ -15,7 +15,7 @@ import { TenebraValue } from "@comp/tenebra/TenebraValue";
 import { DateTime } from "@comp/DateTime";
 
 import * as api from "@api";
-import { lookupAddress, TenebraAddressWithNames } from "@api/lookup";
+import { lookupAddress, lookupStakes, TenebraAddressWithNames } from "@api/lookup";
 import { useWallets } from "@wallets";
 import { useContacts } from "@contacts";
 import { useSubscription } from "@global/ws/WebsocketSubscription";
@@ -32,6 +32,7 @@ import { useEditContactModal } from "@pages/contacts/ContactEditButton";
 import { useSendTransactionModal } from "@comp/transactions/SendTransactionModalLink";
 
 import "./AddressPage.less";
+import { TenebraStake } from "@api/types";
 
 const { Text } = Typography;
 
@@ -42,9 +43,10 @@ interface ParamTypes {
 interface PageContentsProps {
   address: TenebraAddressWithNames;
   lastTransactionID: number;
+  stake: TenebraStake;
 }
 
-function PageContents({ address, lastTransactionID }: PageContentsProps): JSX.Element {
+function PageContents({ address, lastTransactionID, stake }: PageContentsProps): JSX.Element {
   const { t } = useTranslation();
   const { walletAddressMap } = useWallets();
   const { contactAddressMap } = useContacts();
@@ -122,6 +124,13 @@ function PageContents({ address, lastTransactionID }: PageContentsProps): JSX.El
         />
       </Col>
 
+      <Col span={24} md={12} lg={8}>
+        <Statistic
+          titleKey="address.stake"
+          value={<TenebraValue long green highlightZero value={stake.stake} />}
+        />
+      </Col>
+
       {/* Names */}
       <Col span={24} md={12} lg={8}>
         <Statistic
@@ -175,6 +184,7 @@ export function AddressPage(): JSX.Element {
 
   const { address } = useParams<ParamTypes>();
   const [tenebraAddress, setTenebraAddress] = useState<TenebraAddressWithNames | undefined>();
+  const [tenebraStake, setTenebraStake] = useState<TenebraStake | undefined>();
   const [error, setError] = useState<Error | undefined>();
 
   // Used to refresh the address data when a transaction is made to it
@@ -197,6 +207,12 @@ export function AddressPage(): JSX.Element {
   useEffect(() => {
     lookupAddress(address, true)
       .then(setTenebraAddress)
+      .catch(setError);
+  }, [syncNode, address, usedRefreshID]);
+
+  useEffect(() => {
+    lookupStakes([address])
+      .then(results => setTenebraStake(results[address] ?? undefined))
       .catch(setError);
   }, [syncNode, address, usedRefreshID]);
 
@@ -223,11 +239,12 @@ export function AddressPage(): JSX.Element {
           notFoundSubTitleKey="address.resultNotFound"
         />
       )
-      : (tenebraAddress
+      : (tenebraAddress && tenebraStake
         ? (
           <PageContents
             address={tenebraAddress}
             lastTransactionID={usedRefreshID}
+            stake={tenebraStake}
           />
         )
         : <Skeleton active />)}

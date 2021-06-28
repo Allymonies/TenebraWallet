@@ -561,6 +561,7 @@
     "contactLabel": "Contact:",
 
     "balance": "Current balance",
+    "stake": "Stake",
     "names": "Names",
     "nameCount": "{{count, number}} name",
     "nameCount_plural": "{{count, number}} names",
