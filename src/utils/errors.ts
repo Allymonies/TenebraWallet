@@ -10,9 +10,8 @@ import { message } from "antd";
 declare const __GIT_VERSION__: string;
 const gitVersion: string = __GIT_VERSION__;
 
-const ls = localStorage.getItem("settings.errorReporting");
-export const errorReporting = process.env.DISABLE_SENTRY !== "true" &&
-  (ls === null || ls === "true");
+//const ls = localStorage.getItem("settings.errorReporting");
+export const errorReporting = false;
 export const messageOnErrorReport = localStorage.getItem("settings.messageOnErrorReport") === "true";
 
 Sentry.init({
