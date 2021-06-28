@@ -15,10 +15,8 @@ import { setLastTxFrom } from "@actions/WalletsActions";
 
 import { useWallets, Wallet } from "@wallets";
 import { useMountEffect } from "@utils/hooks";
-import { sha256 } from "@utils/crypto";
 import { useBooleanSetting, useIntegerSetting } from "@utils/settings";
 
-import { useSyncNode } from "@api";
 import { TenebraStake } from "@api/types";
 import { makeDepositTransaction, makeWithdrawTransaction } from "@api/transactions";
 import { handleStakingError } from "./handleErrors";
@@ -200,7 +198,7 @@ export function useStakingForm({
 
   // Used to check for warning on large transactions
   const { walletAddressMap } = useWallets();
-  const url = useSyncNode();
+  //const url = useSyncNode();
 
   // Confirmation modal used for when the transaction amount is very large.
   // This is created here to provide a translation context for the modal.
@@ -310,7 +308,7 @@ export function useStakingForm({
     // confirmation before sending
     const { amount } = values;
     // TODO: Anti-midiocy here but I'm too lazy to figure out what it does
-    const confirmable = await sha256(url) !== "cadc9145658308ead9ade59730063772f9a4d682650842981d3c075c5240cfee";
+    const confirmable = false;//await sha256(url) !== "cadc9145658308ead9ade59730063772f9a4d682650842981d3c075c5240cfee";
     const showConfirm = confirmOnSend || confirmable;
     const isLarge = amount >= currentWallet.balance / 2;
     if (showConfirm || isLarge) {
