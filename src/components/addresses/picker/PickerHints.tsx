@@ -198,7 +198,7 @@ export function usePickerHints(
 
       {/* Show an address hint if possible */}
       {showAddressHint && (
-        <AddressHint address={foundAddress || undefined} nameHint={nameHint} stake={foundStake || undefined} />
+        <AddressHint address={foundAddress || undefined} nameHint={nameHint} stake={foundStake || undefined} wallet={foundWallet} />
       )}
 
       {/* Show a name hint if possible */}

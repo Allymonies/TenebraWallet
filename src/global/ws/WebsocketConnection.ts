@@ -10,7 +10,7 @@ import * as nodeActions from "@actions/NodeActions";
 
 import * as api from "@api";
 import { TenebraAddress, TenebraBlock, TenebraTransaction, WSConnectionState, WSIncomingMessage, WSSubscriptionLevel } from "@api/types";
-import { Wallet, WalletMap, findWalletByAddress, syncWalletUpdate } from "@wallets";
+import { Wallet, WalletMap, findWalletByAddress, syncWalletUpdate, syncWalletStakeUpdate } from "@wallets";
 import WebSocketAsPromised from "websocket-as-promised";
 
 import { WSSubscription } from "./WebsocketSubscription";
@@ -34,7 +34,7 @@ export class WebsocketConnection {
 
   private forceClosing = false;
 
-  private refreshThrottles: Record<string, (address: string) => void> = {};
+  private refreshThrottles: Record<string, (address: string, fetchNames?: boolean, fetchStake?: boolean) => void> = {};
 
   private subscriptions: Record<string, WSSubscription> = {};
 
@@ -130,6 +130,8 @@ export class WebsocketConnection {
       this.subscribe("blocks");
       this.subscribe("names");
       this.subscribe("motd");
+      this.subscribe("validators");
+      this.subscribe("stakes");
 
       this.setConnectionState("connected");
     } else if (data.address && this.wallets) {
@@ -139,7 +141,7 @@ export class WebsocketConnection {
       if (!wallet) return;
 
       debug("syncing %s to %s (balance: %d)", address.address, wallet.id, address.balance);
-      syncWalletUpdate(wallet, address);
+      syncWalletUpdate(wallet, address, data.stake ?? undefined);
     } else if (data.type === "event" && data.event && this.wallets) {
       // Handle events
       switch (data.event) {
@@ -162,6 +164,11 @@ export class WebsocketConnection {
           if (toWallet) this.refreshBalance(toWallet.address, true);
           break;
 
+        case "staking":
+          if (fromWallet) this.refreshBalance(fromWallet.address, false, true);
+          if (toWallet) this.refreshBalance(toWallet.address, false, true);
+          break;
+
         // Any other transaction; refresh the balances via the websocket
         default:
           if (fromWallet) this.refreshBalance(fromWallet.address);
@@ -179,6 +186,13 @@ export class WebsocketConnection {
 
         store.dispatch(nodeActions.setLastBlockID(block.height));
 
+        break;
+      }
+      case "stake": {
+        const wallet = findWalletByAddress(this.wallets, data.stake.owner);
+        if (!wallet) return;
+
+        syncWalletStakeUpdate(wallet, data.stake ?? undefined);
         break;
       }
       }
@@ -244,10 +258,10 @@ export class WebsocketConnection {
   /** Queues a command to re-fetch an address's balance. The response will be
    * handled in {@link handleMessage}. This is automatically throttled to
    * execute on the leading edge of 500ms (REFRESH_THROTTLE_MS). */
-  refreshBalance(address: string, fetchNames?: boolean): void {
+  refreshBalance(address: string, fetchNames?: boolean, fetchStake?: boolean): void {
     if (this.refreshThrottles[address]) {
       // Use the existing throttled function if it exists
-      this.refreshThrottles[address](address);
+      this.refreshThrottles[address](address, fetchNames, fetchStake);
     } else {
       // Create and cache a new throttle function for this address
       const throttled = throttle(
@@ -257,17 +271,18 @@ export class WebsocketConnection {
       );
 
       this.refreshThrottles[address] = throttled;
-      throttled(address, fetchNames);
+      throttled(address, fetchNames, fetchStake);
     }
   }
 
-  private _refreshBalance(address: string, fetchNames?: boolean) {
+  private _refreshBalance(address: string, fetchNames?: boolean, fetchStake?: boolean) {
     debug("refreshing balance of %s", address);
     this.ws?.sendPacked({
       type: "address",
       id: this.messageID++,
       address,
-      fetchNames
+      fetchNames,
+      fetchStake
     });
   }
 

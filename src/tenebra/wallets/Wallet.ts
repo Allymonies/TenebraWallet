@@ -36,14 +36,14 @@ export type WalletNew = Pick<Wallet, WalletNewKeys>;
 
 /** Properties of Wallet that are allowed to be updated. */
 export type WalletUpdatableKeys
-  = "label" | "category" | "encPassword" | "encPrivatekey" | "username" | "format" | "address";
+  = "label" | "category" | "encPassword" | "encPrivatekey" | "username" | "format" | "address" | "stake";
 export const WALLET_UPDATABLE_KEYS: WalletUpdatableKeys[]
-  = ["label", "category", "encPassword", "encPrivatekey", "username", "format", "address"];
+  = ["label", "category", "encPassword", "encPrivatekey", "username", "format", "address", "stake"];
 export type WalletUpdatable = Pick<Wallet, WalletUpdatableKeys>;
 
 /** Properties of Wallet that are allowed to be synced. */
 export type WalletSyncableKeys
-  = "balance" | "names" | "firstSeen" | "lastSynced";
+  = "balance" | "names" | "firstSeen" | "lastSynced" | "stake";
 export const WALLET_SYNCABLE_KEYS: WalletSyncableKeys[]
-  = ["balance", "names", "firstSeen", "lastSynced"];
+  = ["balance", "names", "firstSeen", "lastSynced", "stake"];
 export type WalletSyncable = Pick<Wallet, WalletSyncableKeys>;

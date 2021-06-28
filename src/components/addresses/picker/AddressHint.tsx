@@ -5,14 +5,16 @@ import { useTranslation, Trans } from "react-i18next";
 
 import { TenebraAddressWithNames } from "@api/lookup";
 import { TenebraValue } from "@comp/tenebra/TenebraValue";
+import { Wallet } from "@wallets";
 
 interface Props {
   address?: TenebraAddressWithNames;
   nameHint?: boolean;
   stake?: number;
+  wallet?: Wallet;
 }
 
-export function AddressHint({ address, nameHint, stake }: Props): JSX.Element {
+export function AddressHint({ address, nameHint, stake, wallet}: Props): JSX.Element {
   const { t } = useTranslation();
 
   return <span className="address-picker-hint address-picker-address-hint">
@@ -28,7 +30,7 @@ export function AddressHint({ address, nameHint, stake }: Props): JSX.Element {
           // Otherwise, show the balance
           (
             <Trans t={t} i18nKey="addressPicker.addressHintWithStake">
-              Balance: <TenebraValue value={address?.balance || 0} /> Stake: <TenebraValue value={stake || 0} />
+              Balance: <TenebraValue value={address?.balance || 0} /> Stake: <TenebraValue value={wallet ? (wallet.stake ?? (stake ?? 0)) : 0} />
             </Trans>
           )
           :

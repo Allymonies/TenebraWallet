@@ -53,6 +53,7 @@ export function AmountInput({
   function onClickMax() {
     if (!from) return;
     const currentWallet = walletAddressMap[from];
+    console.log(currentWallet, stakingFormValues);
     if (!stakingFormValues || (stakingFormValues.action && stakingFormValues.action === "deposit")) {
       setAmount(currentWallet?.balance || 0);
     } else if (stakingFormValues.action && stakingFormValues.action === "withdraw") {

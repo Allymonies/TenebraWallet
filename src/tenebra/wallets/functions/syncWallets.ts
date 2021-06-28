@@ -39,6 +39,18 @@ function syncWalletProperties(
   }
 }
 
+function syncWalletStakeProperties(
+  wallet: Wallet,
+  stake: TenebraStake | null,
+  syncTime: Date
+): Wallet {
+  return {
+    ...wallet,
+    lastSynced: syncTime.toISOString(),
+    stake: stake ? stake.stake : wallet.stake
+  };
+}
+
 /** Sync the data for a single wallet from the sync node, save it to local
  * storage, and dispatch the change to the Redux store. */
 export async function syncWallet(
@@ -78,6 +90,22 @@ export function syncWalletUpdate(
     // Wallet failed to sync, clear its properties
     store.dispatch(actions.unsyncWallet(wallet.id, syncTime));
   }
+}
+
+/** Given an already synced wallet, save it to local storage, and dispatch the
+ * change to the Redux store. */
+export function syncWalletStakeUpdate(
+  wallet: Wallet,
+  stake?: TenebraStake | null,
+  dontSave?: boolean
+): void {
+  const syncTime = new Date();
+  const updatedWallet = syncWalletStakeProperties(wallet, stake ?? null, syncTime);
+
+  // Save the wallet to local storage, unless this was an external sync action
+  if (!dontSave) saveWallet(updatedWallet);
+  console.log("New wallet ", updatedWallet);
+  store.dispatch(actions.syncWallet(wallet.id, updatedWallet));
 }
 
 /** Sync the data for all the wallets from the sync node, save it to local

@@ -155,8 +155,8 @@ export type APIResponse<T extends Record<string, any>> = T & {
 }
 
 export type WSConnectionState = "connected" | "disconnected" | "connecting";
-export type WSSubscriptionLevel = "blocks" | "ownBlocks" | "transactions" | "ownTransactions" | "names" | "ownNames" | "motd";
-export type WSEvent = "block" | "transaction" | "name" | "motd";
+export type WSSubscriptionLevel = "blocks" | "ownBlocks" | "transactions" | "ownTransactions" | "names" | "ownNames" | "motd" | "validators" | "ownValidators" | "stakes" | "ownStakes";
+export type WSEvent = "block" | "transaction" | "name" | "motd" | "validator" | "stake";
 export interface WSIncomingMessage {
   id?: number;
   ok?: boolean;
