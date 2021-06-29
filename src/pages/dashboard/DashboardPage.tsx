@@ -17,6 +17,8 @@ import { TipsCard } from "./TipsCard";
 import { SyncDetailedWork } from "@global/ws/SyncDetailedWork";
 
 import "./DashboardPage.less";
+import React from "react";
+import { StakeInfoCard } from "./StakeInfoCard";
 
 export function DashboardPage(): JSX.Element {
 
@@ -35,8 +37,9 @@ export function DashboardPage(): JSX.Element {
     </Row>
 
     <Row gutter={16} className="dashboard-main-row">
+      <Col span={24} xl={6}><StakeInfoCard /></Col>
+      <Col span={24} xl={12}><BlockDifficultyCard /></Col>
       <Col span={24} xl={6}><BlockValueCard /></Col>
-      <Col span={24} xl={18}><BlockDifficultyCard /></Col>
     </Row>
 
     <Row gutter={16} className="dashboard-main-row">

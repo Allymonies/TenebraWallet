@@ -59,6 +59,7 @@ export interface TenebraWorkDetailed {
 
   base_value: number;
   block_value: number;
+  total_staked: number;
 
   decrease: {
     value: number;

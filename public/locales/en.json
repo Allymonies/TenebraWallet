@@ -377,6 +377,9 @@
     "walletOverviewNamesCountEmpty": "No names",
     "walletOverviewSeeMore": "See all {{count, number}}...",
     "walletOverviewAddWallets": "Add wallets...",
+    "stakeInfoCardTitle": "Total staked",
+    "stakeInfoAPY": "APY: <1>{{APY}}%</1>",
+    "stakeInfoEmptyDescription": "No current stakers, go to Staking and be the first!",
 
     "transactionsCardTitle": "Transactions",
     "transactionsError": "There was an error fetching your transactions. See the console for details.",
