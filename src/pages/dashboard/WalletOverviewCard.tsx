@@ -24,6 +24,9 @@ export function WalletOverviewCard(): JSX.Element {
   // Sum the balance and names of all wallets
   const balance = clonedWallets.filter(w => w.balance !== undefined)
     .reduce((acc, w) => acc + w.balance!, 0);
+  console.log(clonedWallets);
+  const totalStake = clonedWallets.filter(w => w.stake !== undefined)
+    .reduce((acc, w) => acc + w.stake!, 0);
   const names = clonedWallets.filter(w => w.names !== undefined)
     .reduce((acc, w) => acc + w.names!, 0);
 
@@ -39,15 +42,23 @@ export function WalletOverviewCard(): JSX.Element {
     {/* Top row (summaries) */}
     <Row gutter={16} className="dashboard-wallets-top-row">
       {/* Total balance */}
-      <Col span={24} xl={12} className="dashboard-wallets-balance">
+      <Col span={24} xl={8} className="dashboard-wallets-balance">
         <Statistic
           titleKey="dashboard.walletOverviewTotalBalance"
           value={<TenebraValue value={balance} long green={balance > 0} />}
         />
       </Col>
 
+      {/* Total Stake balance */}
+      <Col span={24} xl={8} className="dashboard-wallets-stake">
+        <Statistic
+          titleKey="dashboard.walletOverviewTotalStake"
+          value={<TenebraValue value={totalStake} long green={totalStake > 0} />}
+        />
+      </Col>
+
       {/* Names */}
-      <Col span={24} xl={12} className="dashboard-wallets-names">
+      <Col span={24} xl={8} className="dashboard-wallets-names">
         <Statistic
           titleKey="dashboard.walletOverviewNames"
           value={names > 0

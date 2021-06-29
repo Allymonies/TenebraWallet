@@ -81,6 +81,7 @@ export const WalletsReducer = createReducer({ wallets: {} } as State)
         balance: newData.balance,
         names: newData.names,
         firstSeen: newData.firstSeen,
+        stake: newData.stake,
         lastSynced: newData.lastSynced
       })) // convert back to a WalletMap
       .reduce((o, wallet) => ({ ...o, [wallet.id]: wallet }), {});

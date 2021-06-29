@@ -370,6 +370,7 @@
 
     "walletOverviewCardTitle": "Wallets",
     "walletOverviewTotalBalance": "Total balance",
+    "walletOverviewTotalStake": "Total stake",
     "walletOverviewNames": "Names",
     "walletOverviewNamesCount": "{{count, number}} name",
     "walletOverviewNamesCount_plural": "{{count, number}} names",
