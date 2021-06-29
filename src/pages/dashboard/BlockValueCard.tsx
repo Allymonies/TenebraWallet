@@ -17,9 +17,9 @@ export function BlockValueCard(): JSX.Element {
   const { t } = useTranslation();
 
   const work = useSelector((s: RootState) => s.node.detailedWork);
-  const hasNames = (work?.unpaid || 0) > 0;
-  const soonestDecrease = Math.min(work ? work.decrease.blocks : 0, work ? work.decreasePenalty.blocks : 0);
-  const soonestDecreaseAmount = work ? (work.decrease.blocks < work.decreasePenalty.blocks ? work.decrease.value
+  const hasNames = ((work?.unpaid || 0) + (work?.unpaidPenalties || 0)) > 0;
+  const soonestDecrease = (work?.decrease.blocks !== 0 && work?.decreasePenalty.blocks !== 0) ? Math.min(work ? work.decrease.blocks : 999999999, work ? work.decreasePenalty.blocks : 0) : (work ? (work.decrease.blocks !== 0 ? work.decrease.blocks : work.decreasePenalty.blocks) : 0);
+  const soonestDecreaseAmount = work ? ((work.decrease.blocks < work.decreasePenalty.blocks && work.decrease.blocks > 0) ? work.decrease.value
     : (work.decrease.blocks > work.decreasePenalty.blocks ? work.decreasePenalty.value
       : work.decrease.value + work.decreasePenalty.value))
     : 0;
