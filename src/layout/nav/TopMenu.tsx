@@ -58,6 +58,13 @@ export function TopMenu(): JSX.Element {
           </ConditionalLink>
         </Menu.Item>
 
+        {/* Stake Tenebra */}
+        <Menu.Item>
+          <ConditionalLink to="/staking" matchTo aria-label={tStr("stakingLong")}>
+            <div><DownloadOutlined />{tStr("stakingLong")}</div>
+          </ConditionalLink>
+        </Menu.Item>
+
         {/* Only show the extra divider if there are options */}
         {options && <Menu.Divider />}
 
